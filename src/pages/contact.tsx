@@ -20,6 +20,24 @@ const Contact = () => {
       <button onClick={() => changeLanguage('id')}>Bahasa Indonesia</button>
       <h1>{t('contact_us')}</h1>
       <p>{t('contact_description')}</p>
+      <div>
+        <h2>{t('Hubungi kami di:')}</h2>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/cscpnj/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://chat.whatsapp.com/LqzdLnBJDeuFfkvabIriSU" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="mailto:csc.pnj@gmail.com">Email: csc.pnj@gmail.com</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
