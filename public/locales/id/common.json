@@ -1,0 +1,13 @@
+{
+  "welcome": "Selamat datang di kelompok studi kami",
+  "contact_us": "Hubungi Kami",
+  "about_us": "Tentang kami",
+  "contact_us_at" : "Hubungi kami di:",
+  "contact_description": "Jangan ragu untuk menghubungi kami kapan saja.",
+  "about_page_title": "Halaman Tentang",
+  "about_page_description": "Ini adalah Halaman Tentang untuk Template Nextjs Startup",
+  "about_section_one_title": "Bagian Tentang Satu",
+  "about_section_one_content": "Ini adalah bagian pertama dari halaman Tentang.",
+  "about_section_two_title": "Bagian Tentang Dua",
+  "about_section_two_content": "Ini adalah bagian kedua dari halaman Tentang."
+}

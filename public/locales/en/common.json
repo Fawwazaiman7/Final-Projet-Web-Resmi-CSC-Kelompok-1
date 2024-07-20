@@ -1,0 +1,13 @@
+{
+  "welcome": "Welcome to our study group",
+  "contact_us": "Contact Us",
+  "about_us": "About Us",
+  "contact_us_at" : "Contact Us At:",
+  "contact_description": "Feel free to reach out to us anytime.",
+  "about_page_title": "About Page",
+  "about_page_description": "This is About Page for Startup Nextjs Template",
+  "about_section_one_title": "About Section One",
+  "about_section_one_content": "This is the first section of the About page.",
+  "about_section_two_title": "About Section Two",
+  "about_section_two_content": "This is the second section of the About page."
+}
