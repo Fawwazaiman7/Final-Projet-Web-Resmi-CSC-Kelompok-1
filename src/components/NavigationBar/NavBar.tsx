@@ -1,33 +1,44 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import  { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 interface NavBarProps {
   brandName: string;
   imageSrcPath: string;
-  navItems: string[];
+  navItems: { name: string, path: string }[];
 }
 
-function NavBar({ brandName, imageSrcPath }: NavBarProps) {
+function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
   };
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      require('bootstrap/dist/css/bootstrap.min.css');
+      require('bootstrap/dist/js/bootstrap.bundle.min.js');
+    }
+  }, []);
+
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          <img
-            src={imageSrcPath}
-            width="60"
-            height="60"
-            className="d-inline-block align-center"
-            alt=""
-          />
-          <span className="fw-bolder fs-4">{brandName}</span>
-        </a>
+        <Link href="/" legacyBehavior>
+          <a className="navbar-brand">
+            <Image
+              src={imageSrcPath}
+              width="60"
+              height="60"
+              className="d-inline-block align-center"
+              alt=""
+            />
+            <span className="fw-bolder fs-4">{brandName}</span>
+          </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -40,23 +51,20 @@ function NavBar({ brandName, imageSrcPath }: NavBarProps) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse 
-          navbar-collapse 
-          align-items-center 
-          flex-column 
-          flex-md-row"
+          className="collapse navbar-collapse align-items-center flex-column flex-md-row"
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {['Home', 'Join US', 'About Us', 'Contact Us', 'FAQ', 'Activities'].map((item, index) => (
+            {navItems.map((item, index) => (
               <li className="nav-item" key={index}>
-                <a
-                  className={`nav-link ${activeIndex === index ? 'fw-bold' : ''}`}
-                  href="#"
-                  onClick={() => handleClick(index)}
-                >
-                  {item}
-                </a>
+                <Link href={item.path} legacyBehavior>
+                  <a
+                    className={`nav-link ${activeIndex === index ? 'fw-bold' : ''}`}
+                    onClick={() => handleClick(index)}
+                  >
+                    {item.name}
+                  </a>
+                </Link>
               </li>
             ))}
             <li className="nav-item dropdown">
@@ -94,6 +102,10 @@ function NavBar({ brandName, imageSrcPath }: NavBarProps) {
               </ul>
             </li>
           </ul>
+          <div className="navbar-controls">
+            <LanguageSwitcher />
+            <DarkModeToggle />
+          </div>
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"

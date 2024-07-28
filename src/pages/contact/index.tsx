@@ -1,8 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
-import DarkModeToggle from '../../components/DarkModeToggle';
-import LanguageSwitcher from '../../components/LanguageSwitcher';
 
 const Contact = () => {
   const { t, i18n } = useTranslation('common');
@@ -14,8 +12,6 @@ const Contact = () => {
   
   return (
     <div>
-      <DarkModeToggle />
-      <LanguageSwitcher />
         <h1>{t('contact_us_at')}</h1>
         <ul>
           <li>

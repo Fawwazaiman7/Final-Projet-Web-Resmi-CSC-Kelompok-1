@@ -1,9 +1,11 @@
-import { appWithTranslation } from 'next-i18next';
-import { useEffect } from 'react';
-import i18n from '../../i18n';
-import '../styles/globals.css';
-import { Suspense } from 'react';
-import type { AppProps } from 'next/app';
+import { appWithTranslation } from "next-i18next";
+import { useEffect } from "react";
+import i18n from "../../i18n";
+import "../styles/globals.css";
+import { Suspense } from "react";
+import type { AppProps } from "next/app";
+import NavBar from '../components/NavigationBar/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,9 +16,24 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <Suspense fallback={<div>Loading translations...</div>}>
-      <Component {...pageProps} />
-    </Suspense>
+    <>
+      <NavBar
+        brandName="My Brand"
+        imageSrcPath="/path/to/logo.png"
+        navItems={[
+          { name: 'Home', path: '/' },
+          { name: 'Join Us', path: '/join-us' },
+          { name: 'About Us', path: '/about' },
+          { name: 'Contact Us', path: '/contact' },
+          { name: 'FAQ', path: '/faq' },
+          { name: 'Activities', path: '/activities' }
+        ]}
+      />
+
+      <Suspense fallback={<div>Loading translations...</div>}>
+        <Component {...pageProps} />
+      </Suspense>
+    </>
   );
 }
 

@@ -1,14 +1,23 @@
-import { useTranslation } from "react-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { GetStaticProps } from "next";
-import DarkModeToggle from "../../components/DarkModeToggle";
-import LanguageSwitcher from '../../components/LanguageSwitcher';
-import AboutSectionOne from "./AboutSectionOne";
-import AboutSectionTwo from "./AboutSectionTwo";
-import Breadcrumb from "../common/Breadcrumb";
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next';
+import AboutSectionOne from './AboutSectionOne';
+import AboutSectionTwo from './AboutSectionTwo';
+import Breadcrumb from '../../components/common/Breadcrumb';
 
 const AboutPage = () => {
-  const { t, i18n } = useTranslation("common");
+  const { t, i18n } = useTranslation('common');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   console.log('Translation function ready:', !!t);
   console.log('Current language:', i18n.language);
   console.log('i18n instance:', i18n);
@@ -16,12 +25,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <DarkModeToggle />
-      <LanguageSwitcher />
-      <Breadcrumb
-        pageName={t('about_page_title')}
-        description={t('about_page_description')}
-      />
+      <Breadcrumb pageName={t('about_page_title')} />
       <AboutSectionOne />
       <AboutSectionTwo />
     </>
