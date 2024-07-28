@@ -29,9 +29,20 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <button onClick={toggleDarkMode} className={darkMode ? 'dark-mode' : ''}>
-      {darkMode ? 'Light Mode' : 'Dark Mode'}
-    </button>
+    <div className="toggle-container">
+      <input
+        type="checkbox"
+        className="checkbox"
+        id="checkbox"
+        checked={darkMode}
+        onChange={toggleDarkMode}
+      />
+      <label htmlFor="checkbox" className="checkbox-label">
+        <i className="fas fa-moon"></i>
+        <i className="fas fa-sun"></i>
+        <span className="ball"></span>
+      </label>
+    </div>
   );
 };
 

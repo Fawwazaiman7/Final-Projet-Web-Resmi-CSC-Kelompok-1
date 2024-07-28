@@ -34,7 +34,7 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
               width="60"
               height="60"
               className="d-inline-block align-center"
-              alt=""
+              alt="Logo"
             />
             <span className="fw-bolder fs-4">{brandName}</span>
           </a>
@@ -105,18 +105,22 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
           <div className="navbar-controls">
             <LanguageSwitcher />
             <DarkModeToggle />
+            <form className="search-form d-flex" role="search">
+              <input
+                className="search-input form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <Image
+                src="/icons8-search-30.png"
+                width={20}
+                height={20}
+                className="search-icon"
+                alt="Search"
+              />
+            </form>
           </div>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>

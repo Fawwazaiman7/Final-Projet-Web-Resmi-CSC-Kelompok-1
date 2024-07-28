@@ -13,6 +13,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+
+
 a {
   color: #0000ee; /* Default link color */
 }
@@ -20,6 +22,23 @@ a {
 a:hover {
   color: #551a8b; /* Hover link color */
 }
+
+.search-form {
+  position: relative;
+}
+
+.search-input {
+  padding-right: 30px; /* Menambahkan ruang untuk ikon pencarian */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 
 /* Navbar Light Mode */
 .navbar-light {
@@ -96,6 +115,7 @@ button.dark-mode {
 .navbar-controls {
   display: flex;
   gap: 10px;
+  align-items: center; /* Ensure controls are vertically centered */
 }
 
 .navbar-controls button {
@@ -120,4 +140,51 @@ button.dark-mode {
 
 .navbar-controls button.dark-mode:hover {
   background-color: #23272b;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
 }

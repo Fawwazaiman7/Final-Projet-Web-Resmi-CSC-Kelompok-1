@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import type { AppProps } from "next/app";
 import NavBar from '../components/NavigationBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Tambahkan ini
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -18,8 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <NavBar
-        brandName="My Brand"
-        imageSrcPath="/path/to/logo.png"
+        brandName="CSC PNJ"
+        imageSrcPath="/csc-logo.png"
         navItems={[
           { name: 'Home', path: '/' },
           { name: 'Join Us', path: '/join-us' },
