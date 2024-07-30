@@ -19,7 +19,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="language-switcher">
       <button className="dropbtn">
-        {i18n.language === "en" ? "English" : "Bahasa Indonesia"}
+        {i18n.language === "en" ? "EN-UK" : "ID-ID"}
       </button>
       <div className="dropdown-content">
         <a href="#" onClick={() => changeLanguage("en")}>

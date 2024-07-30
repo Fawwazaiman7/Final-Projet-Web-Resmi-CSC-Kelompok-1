@@ -38,8 +38,8 @@ const DarkModeToggle = () => {
         onChange={toggleDarkMode}
       />
       <label htmlFor="checkbox" className="checkbox-label">
-        <i className="fas fa-moon"></i>
-        <i className="fas fa-sun"></i>
+        <i className="fas fa-moon moon-icon"></i>
+        <i className="fas fa-sun sun-icon"></i>
         <span className="ball"></span>
       </label>
     </div>

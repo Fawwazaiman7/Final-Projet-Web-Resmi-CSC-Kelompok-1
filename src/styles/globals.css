@@ -13,91 +13,211 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Styling untuk Language Switcher */
 .language-switcher {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-content {
+.language-switcher .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.language-switcher:hover .dropdown-content,
+.language-switcher:focus-within .dropdown-content {
+  display: block;
+  opacity: 1;
+  margin-top: 4px;
 }
 
 .language-switcher .dropdown-content a {
-  color: #000000 !important; /* Ensure text color is black */
+  color: #000000 !important; /* Warna teks default */
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .language-switcher .dropdown-content a:hover {
-  background-color: #f1f1f1 !important; /* Optional: Hover background color */
+  color: #0048ff !important; /* Warna teks saat hover */
+  transform: scale(1.02); /* Membesarkan teks sedikit */
 }
 
-.language-switcher:hover .dropdown-content {
-  display: block;
+.language-switcher .dropdown-content a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #0048ff; /* Warna underline */
+  transition: width 0.3s, left 0.3s;
+  border-radius: 2px;
 }
 
-.language-switcher:hover .dropbtn {
-  background-color: #3e8e41;
+.language-switcher .dropdown-content a:hover::before {
+  width: 100%;
+  left: 0;
 }
 
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+.language-switcher .dropbtn {
+  position: relative;
+  color: #000000;
+  transition: color 0.3s, transform 0.3s;
   cursor: pointer;
 }
 
-.dropbtn:focus {
-  outline: none;
+.language-switcher .dropbtn:hover {
+  color: #0048ff !important; /* Blue hover link color */
 }
 
-a {
-  color: #0000ee; /* Default link color */
+.language-switcher .dropbtn::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px; /* Atur sesuai jarak yang diinginkan */
+  left: 50%;
+  background-color: #0048ff; /* Blue underline color */
+  transition: width 0.3s, left 0.3s;
+  border-radius: 2px;
 }
 
-a:hover {
-  color: #551a8b; /* Hover link color */
+.language-switcher .dropbtn:hover::before {
+  width: 100%;
+  left: 0;
 }
 
-.search-form {
+/* CSS untuk transisi smooth pada kotak input pencarian */
+.search-container {
   position: relative;
-}
-
-.search-input {
-  padding-right: 30px; /* Menambahkan ruang untuk ikon pencarian */
+  display: flex;
+  align-items: center;
 }
 
 .search-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.search-form {
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden; /* Menyembunyikan bagian input yang tidak terlihat */
+}
+
+.search-form.visible {
+  opacity: 1;
+  width: 200px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.search-input {
+  width: 100%;
 }
 
 /* Custom Styles for Navbar Links */
 .navbar-nav .nav-link,
 .navbar-nav .dropdown-item {
   color: #000000 !important; /* Default link color */
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .dropdown-item:hover {
-  color: #551a8b !important; /* Hover link color */
+  color: #0048ff !important; /* Blue hover link color */
+  transform: scale(1.02); /* Membesarkan teks sedikit */
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .dropdown-item.active {
+  font-weight: bold;
+  color: #0048ff !important;
+}
+
+.navbar-nav .nav-link::before,
+.navbar-nav .dropdown-item::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #0048ff; /* Blue underline color */
+  transition: width 0.3s, left 0.3s;
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .dropdown-item:hover::before,
+.navbar-nav .nav-link.active::before,
+.navbar-nav .dropdown-item.active::before {
+  width: 100%;
+  left: 0;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 20px; /* Atur jarak antar item sesuai kebutuhan */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 15px; /* Atur jarak antar item sesuai kebutuhan */
 }
 
 /* Navbar Light Mode */
 .navbar-light {
   background-color: #f8f9fa;
   color: #000000;
+}
+
+/* Menampilkan dropdown menu saat hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  z-index: 1000; /* Pastikan dropdown berada di atas elemen lain */
 }
 
 /* Dark Mode */
@@ -171,15 +291,10 @@ button.dark-mode {
   margin-left: 10px;
   padding: 8px 12px;
   font-size: 14px;
-  background-color: #007bff;
-  color: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar-controls button:hover {
-  background-color: #0056b3;
 }
 
 .navbar-controls button.dark-mode {
