@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 interface NavBarProps {
   brandName: string;
@@ -11,10 +12,16 @@ interface NavBarProps {
 }
 
 function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
+  const { t } = useTranslation('common');
+  const [isMounted, setIsMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [searchVisible, setSearchVisible] = useState(false);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
@@ -55,6 +62,8 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
     }
   }, []);
 
+  if (!isMounted) return null;
+
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
       <div className="container-fluid d-flex align-items-center">
@@ -90,45 +99,11 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
                     className={`nav-link ${activeIndex === index ? 'active' : ''}`}
                     onClick={() => handleClick(index)}
                   >
-                    {item.name}
+                    {t(item.name.toLowerCase().replace(/ /g, "_"))}
                   </a>
                 </Link>
               </li>
             ))}
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                aria-expanded="false"
-              >
-                Divisi
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Softdev
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Explore
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Cyber Security
-                  </a>
-                </li>
-              </ul>
-            </li>
           </ul>
           <div className="navbar-controls ms-auto d-flex align-items-center">
             <div

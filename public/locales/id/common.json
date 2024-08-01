@@ -1,12 +1,22 @@
 {
   "welcome": "Selamat datang di kelompok studi kami",
   "contact_us": "Hubungi Kami",
-  "about_us": "Tentang kami",
-  "contact_us_at" : "Hubungi kami di:",
+  "about_us": "Tentang Kami",
+  "contact_us_at": "Hubungi kami di:",
   "contact_description": "Jangan ragu untuk menghubungi kami kapan saja.",
   "about_page_title": "Halaman Tentang",
   "about_section_one_title": "Bagian Tentang Satu",
   "about_section_one_content": "Ini adalah bagian pertama dari halaman Tentang.",
   "about_section_two_title": "Bagian Tentang Dua",
-  "about_section_two_content": "Ini adalah bagian kedua dari halaman Tentang."
+  "about_section_two_content": "Ini adalah bagian kedua dari halaman Tentang.",
+  "footerCopyright": "Hak Cipta",
+  "footerDesigned": "DISESUAIKAN & DIKEMBANGKAN OLEH KELOMPOK 1 COMPUTER STUDENT CLUB PNJ",
+  "privacyPolicy": "Kebijakan Privasi",
+  "termsConditions": "Syarat dan Ketentuan",
+  "home": "Beranda",
+  "join_us": "Bergabunglah dengan Kami",
+  "about_us": "Tentang Kami",
+  "contact_us": "Hubungi Kami",
+  "activities": "Kegiatan",
+  "faq": "FAQ"
 }

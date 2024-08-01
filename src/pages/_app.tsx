@@ -1,12 +1,13 @@
 import { appWithTranslation } from "next-i18next";
 import { useEffect } from "react";
+import type { AppProps } from "next/app";
 import i18n from "../../i18n";
 import "../styles/globals.css";
-import { Suspense } from "react";
-import type { AppProps } from "next/app";
+import "../styles/Footer.css";
 import NavBar from '../components/NavigationBar/NavBar';
+import Footer from "../components/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Tambahkan ini
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -26,14 +27,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           { name: 'Join Us', path: '/join-us' },
           { name: 'About Us', path: '/about' },
           { name: 'Contact Us', path: '/contact' },
-          { name: 'FAQ', path: '/faq' },
-          { name: 'Activities', path: '/activities' }
+          { name: 'Activities', path: '/activities' },
+          { name: 'FAQ', path: '/faq' }
         ]}
       />
-
-      <Suspense fallback={<div>Loading translations...</div>}>
-        <Component {...pageProps} />
-      </Suspense>
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

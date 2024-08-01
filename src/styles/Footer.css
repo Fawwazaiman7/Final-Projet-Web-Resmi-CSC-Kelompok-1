@@ -1,0 +1,96 @@
+/* Ensure the body and html fill the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Wrapper for the whole page content and footer */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content of the page */
+.content-wrap {
+  flex: 1;
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  font-family: 'Calibri', sans-serif;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling for the designed text */
+.footer-designed {
+  margin-bottom: 10px;
+}
+
+/* Styling for the copyright text */
+.footer-copyright {
+  margin-bottom: 20px;
+}
+
+/* Styling for social media icons */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #ddd;
+}
+
+/* Styling for footer links */
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ddd;
+  text-decoration: underline;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+  .footer-social {
+    margin-bottom: 10px;
+  }
+}

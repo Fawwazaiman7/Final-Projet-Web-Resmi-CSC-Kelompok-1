@@ -330,6 +330,27 @@ button.dark-mode {
   align-items: center;
 }
 
+/* Ensure footer text and icons remain white in dark mode */
+.footer, .footer a, .footer-social a {
+  color: #ffffff !important; /* Warna putih */
+}
+
+.footer-social a {
+  color: #ffffff !important; /* Warna putih untuk ikon */
+}
+
+.footer-social a:hover {
+  color: #dddddd !important; /* Warna saat hover, sedikit lebih gelap */
+}
+
+/* Avoid affecting dark mode styles in other parts */
+body.dark-mode .footer, 
+body.dark-mode .footer a, 
+body.dark-mode .footer-social a {
+  color: #ffffff !important; /* Warna putih dalam mode gelap */
+}
+
+
 .fa-moon {
   color: #f1c40f;
 }

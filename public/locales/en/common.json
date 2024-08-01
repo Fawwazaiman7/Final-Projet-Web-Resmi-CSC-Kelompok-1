@@ -2,11 +2,22 @@
   "welcome": "Welcome to our study group",
   "contact_us": "Contact Us",
   "about_us": "About Us",
-  "contact_us_at" : "Contact Us At:",
+  "contact_us_at": "Contact Us At:",
   "contact_description": "Feel free to reach out to us anytime.",
   "about_page_title": "About Page",
   "about_section_one_title": "About Section One",
   "about_section_one_content": "This is the first section of the About page.",
   "about_section_two_title": "About Section Two",
-  "about_section_two_content": "This is the second section of the About page."
+  "about_section_two_content": "This is the second section of the About page.",
+  "footerCopyright": "Copyright",
+  "footerDesigned": "DESIGNED & DEVELOPED BY KELOMPOK 1 COMPUTER STUDENT CLUB PNJ",
+  "privacyPolicy": "Privacy Policy",
+  "termsConditions": "Terms and Conditions",
+  "home": "Home",
+  "join_us": "Join Us",
+  "about_us": "About Us",
+  "contact_us": "Contact Us",
+  "activities": "Activities",
+  "faq": "FAQ"
+
 }
