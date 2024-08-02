@@ -1,0 +1,28 @@
+/* Styling untuk SearchBar */
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchIcon {
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .searchForm {
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden; /* Menyembunyikan bagian input yang tidak terlihat */
+  }
+  
+  .searchFormVisible {
+    opacity: 1;
+    width: 200px; /* Sesuaikan sesuai kebutuhan */
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+  

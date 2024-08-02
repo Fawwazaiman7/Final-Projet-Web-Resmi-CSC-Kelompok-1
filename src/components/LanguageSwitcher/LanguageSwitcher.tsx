@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import styles from '../../styles/LanguageSwitcher/LanguageSwitcher.module.css';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -11,47 +12,48 @@ const LanguageSwitcher = () => {
   useEffect(() => {
     setMounted(true);
 
-    // Deteksi bahasa default dari browser pengguna
     const browserLanguage = navigator.language.split('-')[0];
-    const supportedLanguages = ["en", "id"]; // Daftar bahasa yang didukung
+    const supportedLanguages = ["en", "id"];
     const preferredLanguage = localStorage.getItem("preferredLanguage");
 
+    // Prioritaskan preferensi pengguna, lalu bahasa browser, dan terakhir bahasa default
     if (preferredLanguage && supportedLanguages.includes(preferredLanguage)) {
-      i18n.changeLanguage(preferredLanguage);
+      changeLanguage(preferredLanguage, true);
+    } else if (supportedLanguages.includes(browserLanguage)) {
+      changeLanguage(browserLanguage, true);
     } else {
-      if (supportedLanguages.includes(browserLanguage)) {
-        i18n.changeLanguage(browserLanguage);
-      } else {
-        i18n.changeLanguage("en"); // Default ke English jika bahasa tidak didukung
-      }
+      changeLanguage("en", true);
     }
 
-    // Hapus preferensi bahasa dari localStorage saat aplikasi ditutup
     window.addEventListener("beforeunload", clearLanguagePreference);
 
     return () => {
       window.removeEventListener("beforeunload", clearLanguagePreference);
     };
-  }, [i18n]);
+  }, []);
 
   const clearLanguagePreference = () => {
     localStorage.removeItem("preferredLanguage");
   };
 
-  const changeLanguage = (lng: string) => {
+  const changeLanguage = (lng: string, initialLoad: boolean = false) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("preferredLanguage", lng);
-    router.push(router.pathname, router.pathname, { locale: lng });
+
+    // Ubah rute tanpa melakukan reload halaman, kecuali pada load awal
+    if (!initialLoad) {
+      router.push(router.pathname, router.asPath, { locale: lng });
+    }
   };
 
   if (!mounted) return null;
 
   return (
-    <div className="language-switcher">
-      <button className="dropbtn">
-        {i18n.language === "en" ? "EN-UK" : "ID-ID"}
+    <div className={styles.languageSwitcher}>
+      <button className={styles.dropbtn}>
+        {i18n.language === "en" ? "EN-UK" : "ID-ID"} <span className={styles.downArrow}>&#9660;</span>
       </button>
-      <div className="dropdown-content">
+      <div className={styles.dropdownContent}>
         <a href="#" onClick={() => changeLanguage("en")}>
           <Image
             src="/icons8-great-britain-48.png"

@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import i18n from "../../i18n";
 import "../styles/globals.css";
-import "../styles/Footer/Footer.css";
-import "../styles/Join_us/JoinUs.module.css";
 import NavBar from '../components/NavigationBar/NavBar';
 import Footer from "../components/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -1,0 +1,84 @@
+/* Prioritize this file's styles over Bootstrap */
+.containerFluid {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.navbarNav {
+  display: flex !important;
+  flex: 1 !important;
+  justify-content: center !important;
+  gap: 40px !important; /* Atur jarak antar item menjadi lebih besar */
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.navbarBrand {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+}
+
+.navbarBrandSpan {
+  color: #000 !important; /* Pastikan warna teks */
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbarControls {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto !important;
+  gap: 50px !important; /* Atur jarak antar item */
+}
+
+.navLink,
+.dropdownItem {
+  color: #000000 !important; /* Default link color */
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+  text-decoration: none !important;
+}
+
+.navLink:hover,
+.dropdownItem:hover {
+  color: #0048ff !important; /* Blue hover link color */
+  transform: scale(1.02); /* Membesarkan teks sedikit */
+  cursor: pointer; /* Tambahkan ini untuk memastikan cursor pointer */
+
+}
+
+.navLinkActive {
+  font-weight: bold;
+  color: #0048ff !important;
+}
+
+.navLink::before,
+.dropdownItem::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px; /* Mengatur ketebalan garis menjadi lebih tipis */
+  bottom: -7px; /* Menambahkan sedikit jarak antara teks dan garis bawah */
+  left: 50%;
+  background-color: #0048ff; /* Warna biru */
+  transition: width 0.3s, left 0.3s;
+  border-radius: 0; /* Menghilangkan border radius agar garis tidak melengkung */
+}
+
+.navLink:hover::before,
+.dropdownItem:hover::before,
+.navLinkActive::before,
+.dropdownItemActive::before {
+  width: 120%; /* Panjang garis bawah lebih dari 100% */
+  left: -10%;
+}

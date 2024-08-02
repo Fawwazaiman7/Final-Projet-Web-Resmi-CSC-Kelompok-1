@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-
+import styles from '../../styles/Footer/Footer.module.css';
+import Link from "next/link";
 const Footer: React.FC = () => {
   const { t, i18n } = useTranslation("common");
   const [isMounted, setIsMounted] = useState(false);
@@ -10,56 +11,37 @@ const Footer: React.FC = () => {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null; // Avoid rendering until component is mounted
+  if (!isMounted) return null;
 
   return (
-    <div className="page-container">
-      <div className="content-wrap">{/* Konten utama halaman lainnya */}</div>
-      <footer className="footer">
-        <div className="container">
-          <p className="footer-designed">
+    <div className={styles.pageContainer}>
+      <div className={styles.contentWrap}></div>
+      <footer className={styles.footer}>
+        <div className={styles.container}>
+          <p className={styles.footerDesigned}>
             {t("footerCopyright")} &copy; {new Date().getFullYear()} CSC
           </p>
-          <p className="footer-copyright">{t("footerDesigned")}</p>
-          <div className="footer-social">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-          </div>
+          <p className={styles.footerCopyright}>{t("footerDesigned")}</p>
           <nav>
-            <ul className="footer-links">
-              <li>
+            <ul className={styles.footerLinks}>
+              <li className={styles.footerLinksItem}>
                 <a href="/about">{t("about_us")}</a>
               </li>
-              <li>
+              <li className={styles.footerLinksItem}>
                 <a href="/contact">{t("contact_us")}</a>
-              </li>
-              <li>
-                <a href="/privacy">{t("privacyPolicy")}</a>
-              </li>
-              <li>
-                <a href="/terms">{t("termsConditions")}</a>
               </li>
             </ul>
           </nav>
+          <div className={styles.footerSocial}>
+            <Link
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.footerSocialLink}
+            >
+              <FaInstagram />
+            </ Link>
+          </div>
         </div>
       </footer>
     </div>

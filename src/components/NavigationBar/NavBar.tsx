@@ -1,9 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import SearchBar from '../SearchBar/SearchBar';
 import { useTranslation } from 'react-i18next';
+import styles from '../../styles/NavigationBar/NavBar.module.css';
 
 interface NavBarProps {
   brandName: string;
@@ -13,47 +16,22 @@ interface NavBarProps {
 
 function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
   const { t } = useTranslation('common');
+  const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [searchVisible, setSearchVisible] = useState(false);
-  const [isSearchClicked, setIsSearchClicked] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+    // Set activeIndex based on the current route
+    const currentPath = router.pathname;
+    const currentIndex = navItems.findIndex(item => item.path === currentPath);
+    setActiveIndex(currentIndex);
+  }, [router.pathname, navItems]);
 
-  const handleClick = (index: number) => {
+  const handleClick = (index: number, path: string) => {
     setActiveIndex(index);
+    router.push(path);
   };
-
-  const showSearch = () => {
-    setSearchVisible(true);
-  };
-
-  const hideSearch = () => {
-    if (!isSearchClicked) {
-      setSearchVisible(false);
-    }
-  };
-
-  const handleSearchClick = () => {
-    setIsSearchClicked(true);
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (searchInputRef.current && !searchInputRef.current.contains(event.target as Node)) {
-      setIsSearchClicked(false);
-      setSearchVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -66,19 +44,21 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
 
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
-      <div className="container-fluid d-flex align-items-center">
-        <Link href="/" legacyBehavior>
-          <a className="navbar-brand">
-            <Image
-              src={imageSrcPath}
-              width="60"
-              height="60"
-              className="d-inline-block align-center"
-              alt="Logo"
-            />
-            <span className="fw-bolder fs-4">{brandName}</span>
-          </a>
-        </Link>
+      <div className={`${styles.containerFluid} container-fluid`}>
+        <div className={styles.navbarLeft}>
+          <Link href="/" legacyBehavior>
+            <a className={styles.navbarBrand}>
+              <Image
+                src={imageSrcPath}
+                width="60"
+                height="60"
+                className="d-inline-block align-center"
+                alt="Logo"
+              />
+              <span className={styles.navbarBrandSpan}>{brandName}</span>
+            </a>
+          </Link>
+        </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -90,48 +70,28 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center w-100">
+        <div className={`collapse navbar-collapse ${styles.navbarCenter}`} id="navbarSupportedContent">
+          <ul className={`${styles.navbarNav} navbar-nav me-auto mb-2 mb-lg-0 justify-content-center w-100`}>
             {navItems.map((item, index) => (
               <li className="nav-item" key={index}>
-                <Link href={item.path} legacyBehavior>
-                  <a
-                    className={`nav-link ${activeIndex === index ? 'active' : ''}`}
-                    onClick={() => handleClick(index)}
-                  >
-                    {t(item.name.toLowerCase().replace(/ /g, "_"))}
-                  </a>
-                </Link>
+                <a
+                  className={`${styles.navLink} ${activeIndex === index ? styles.navLinkActive : ''}`}
+                  onClick={(e) => {
+                    e.preventDefault(); // Mencegah perilaku default yang dapat menyebabkan refresh halaman
+                    handleClick(index, item.path);
+                  }}
+                >
+                  {t(item.name.toLowerCase().replace(/ /g, "_"))}
+                </a>
               </li>
             ))}
           </ul>
-          <div className="navbar-controls ms-auto d-flex align-items-center">
-            <div
-              className="search-container d-flex align-items-center"
-              onMouseEnter={showSearch}
-              onMouseLeave={hideSearch}
-              onClick={handleSearchClick}
-            >
-              <Image
-                src="/icons8-search-30.png"
-                width={20}
-                height={20}
-                className="search-icon cursor-pointer"
-                alt="Search"
-              />
-              <form className={`search-form d-flex ${searchVisible ? 'visible' : ''}`} role="search">
-                <input
-                  ref={searchInputRef}
-                  className="search-input form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                  autoFocus={searchVisible}
-                />
-              </form>
+          <div className={styles.navbarRight}>
+            <div className={styles.navbarControls}>
+              <SearchBar />
+              <LanguageSwitcher />
+              <DarkModeToggle />
             </div>
-            <LanguageSwitcher />
-            <DarkModeToggle />
           </div>
         </div>
       </div>
