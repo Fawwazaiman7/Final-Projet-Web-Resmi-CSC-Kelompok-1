@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import i18n from "../../i18n";
 import "../styles/globals.css";
-import "../styles/Footer.css";
+import "../styles/Footer/Footer.css";
+import "../styles/Join_us/JoinUs.module.css";
 import NavBar from '../components/NavigationBar/NavBar';
 import Footer from "../components/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         imageSrcPath="/csc-logo.png"
         navItems={[
           { name: 'Home', path: '/' },
-          { name: 'Join Us', path: '/join-us' },
+          { name: 'Join Us', path: '/join_us' },
           { name: 'About Us', path: '/about' },
           { name: 'Contact Us', path: '/contact' },
           { name: 'Activities', path: '/activities' },

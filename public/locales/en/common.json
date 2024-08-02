@@ -15,9 +15,9 @@
   "termsConditions": "Terms and Conditions",
   "home": "Home",
   "join_us": "Join Us",
-  "about_us": "About Us",
-  "contact_us": "Contact Us",
+  "join_us_title": "Join Us Today",
+  "join_us_description": "Become a member of our community and feel the benefits by participating in a series of other interesting activities! interested in joining? click the join button below",
+  "join_us_button": "Join",
   "activities": "Activities",
   "faq": "FAQ"
-
 }

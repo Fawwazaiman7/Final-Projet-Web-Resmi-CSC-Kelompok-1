@@ -1,17 +1,47 @@
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+
+    // Deteksi bahasa default dari browser pengguna
+    const browserLanguage = navigator.language.split('-')[0];
+    const supportedLanguages = ["en", "id"]; // Daftar bahasa yang didukung
+    const preferredLanguage = localStorage.getItem("preferredLanguage");
+
+    if (preferredLanguage && supportedLanguages.includes(preferredLanguage)) {
+      i18n.changeLanguage(preferredLanguage);
+    } else {
+      if (supportedLanguages.includes(browserLanguage)) {
+        i18n.changeLanguage(browserLanguage);
+      } else {
+        i18n.changeLanguage("en"); // Default ke English jika bahasa tidak didukung
+      }
+    }
+
+    // Hapus preferensi bahasa dari localStorage saat aplikasi ditutup
+    window.addEventListener("beforeunload", clearLanguagePreference);
+
+    return () => {
+      window.removeEventListener("beforeunload", clearLanguagePreference);
+    };
+  }, [i18n]);
+
+  const clearLanguagePreference = () => {
+    localStorage.removeItem("preferredLanguage");
+  };
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    localStorage.setItem("preferredLanguage", lng);
+    router.push(router.pathname, router.pathname, { locale: lng });
   };
 
   if (!mounted) return null;

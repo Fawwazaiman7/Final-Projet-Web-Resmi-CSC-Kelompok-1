@@ -1,0 +1,66 @@
+.joinUsContainer {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.leftSection {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-mode .joinUsContainer {
+  background-color: #1e1e1e !important;
+}
+
+.joinUsContainer .title {
+  font-size: 2.5rem;
+  color: #4e2bb4;
+  margin-bottom: 20px;
+}
+
+
+.joinUsContainer .description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+
+
+.joinUsContainer .joinButton {
+  background-color: #4e2bb4;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+:global(.dark-mode) .joinUsContainer {
+  background-color: #1e1e1e;
+}
+
+:global(.dark-mode) .joinUsContainer .title {
+  color: #9c27b0;
+}
+
+:global(.dark-mode) .joinUsContainer .description {
+  color: #ffffff;
+}
+
+:global(.dark-mode) .joinUsContainer .joinButton {
+  background-color: #9c27b0;
+}

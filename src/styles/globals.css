@@ -13,6 +13,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+
+
 /* Styling untuk Language Switcher */
 .language-switcher {
   position: relative;
@@ -37,7 +39,7 @@ body {
 .language-switcher:focus-within .dropdown-content {
   display: block;
   opacity: 1;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .language-switcher .dropdown-content a {
@@ -211,10 +213,7 @@ body {
   color: #000000;
 }
 
-/* Menampilkan dropdown menu saat hover */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-}
+
 
 .dropdown-menu {
   z-index: 1000; /* Pastikan dropdown berada di atas elemen lain */
@@ -275,10 +274,7 @@ button:hover {
   background-color: #ddd;
 }
 
-button.dark-mode {
-  background-color: #555;
-  color: #fff;
-}
+
 
 /* Custom styles for navbar controls (LanguageSwitcher and DarkModeToggle) */
 .navbar-controls {
