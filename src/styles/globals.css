@@ -18,83 +18,6 @@ html, body {
   margin: 0;
 }
 
-/* Custom Styles for Navbar Links */
-.navbar-nav .nav-link,
-.navbar-nav .dropdown-item {
-  color: #000000 !important; /* Default link color */
-  position: relative;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .dropdown-item:hover {
-  color: #0048ff !important; /* Blue hover link color */
-  transform: scale(1.02); /* Membesarkan teks sedikit */
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .dropdown-item.active {
-  font-weight: bold;
-  color: #0048ff !important;
-}
-
-.navbar-nav .nav-link::before,
-.navbar-nav .dropdown-item::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background-color: #0048ff; /* Blue underline color */
-  transition: width 0.3s, left 0.3s;
-  border-radius: 2px;
-}
-
-.navbar-nav .nav-link:hover::before,
-.navbar-nav .dropdown-item:hover::before,
-.navbar-nav .nav-link.active::before,
-.navbar-nav .dropdown-item.active::before {
-  width: 100%;
-  left: 0;
-}
-
-.container-fluid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-left,
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-center {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.navbar-nav {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  gap: 20px; /* Atur jarak antar item sesuai kebutuhan */
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-controls {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  gap: 20px; /* Atur jarak antar item sesuai kebutuhan */
-}
 
 /* Dark Mode */
 body.dark-mode {
@@ -102,6 +25,6 @@ body.dark-mode {
   color: #ffffff;
 }
 
-.navbar-brand span {
-  color: #000000 !important; /* Ensure brand text color is black */
+:global(.navbar) {
+  background-color: #f8f9fa !important;
 }
