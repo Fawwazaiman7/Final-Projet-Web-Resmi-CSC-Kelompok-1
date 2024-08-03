@@ -1,0 +1,82 @@
+/* Contact.module.css */
+
+.contactContainer {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contactTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.contactContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 180px; /* Menambahkan jarak antar item */
+  margin-bottom: 30px;
+}
+
+.contactItem {
+  text-align: center;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactIcon {
+  margin-bottom: 20px;
+}
+
+.contactLink {
+  font-size: 1.1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+.contactDescription {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+/* Global Dark Mode Styles */
+:global(.dark-mode) .contactContainer {
+  background-color: #1a1a2e;
+  color: #e6e6e6;
+}
+
+:global(.dark-mode) .contactTitle {
+  color: #ffffff;
+}
+
+:global(.dark-mode) .contactItem p,
+:global(.dark-mode) .contactLink {
+  color: #bb86fc;
+}
+
+:global(.dark-mode) .contactDescription {
+  color: #cccccc;
+}
+
+:global(.dark-mode) .contactLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

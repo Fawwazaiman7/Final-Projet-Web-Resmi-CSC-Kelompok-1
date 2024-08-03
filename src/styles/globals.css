@@ -25,4 +25,15 @@ body.dark-mode {
   color: #ffffff;
 }
 
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentWrap {
+  flex: 1;
+}
+
+/* Tambahkan styling global lainnya jika diperlukan */
 

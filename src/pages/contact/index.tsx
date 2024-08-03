@@ -2,65 +2,69 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import styles from '../../styles/Contact_us/Contact.module.css';
+import { useEffect, useState } from 'react';
 
 const Contact = () => {
-  const { t, i18n } = useTranslation('common');
-  
-  console.log('Translation function ready:', !!t);
-  console.log('Current language:', i18n.language);
-  console.log('i18n instance:', i18n);
-  console.log('Available translations:', i18n.getResourceBundle(i18n.language, 'common'));
+  const { t } = useTranslation('common');
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // Atau bisa menampilkan loading spinner
+  }
 
   return (
-    <div>
-      <h1>{t('contact_us_at')}</h1>
+    <div className={styles.contactContainer}>
+      <h1 className={styles.contactTitle}>{t('contact_us_at')}</h1>
 
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexDirection: 'row' }}>
-
-        <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Image 
-            src="/instagram-logo.png" 
-            alt="Instagram" 
-            width={200} 
-            height={200} 
-            style={{ marginBottom: '10px' }} 
+      <div className={styles.contactContent}>
+        <div className={styles.contactItem}>
+          <Image
+            src="/instagram-logo.png"
+            alt="Instagram"
+            width={200}
+            height={200}
+            className={styles.contactIcon}
           />
-          <a href="https://www.instagram.com/cscpnj/" target="_blank" rel="noopener noreferrer">
-            <p>DM via Instagram</p>
+          <a href="https://www.instagram.com/cscpnj/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+            <p>{t('contact_instagram')}</p>
           </a>
           <p>@CSCPNJ</p>
         </div>
 
-        <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Image 
-            src="/whatsapp-logo.png" 
-            alt="WhatsApp" 
-            width={200} 
-            height={200} 
-            style={{ marginBottom: '10px' }} 
+        <div className={styles.contactItem}>
+          <Image
+            src="/whatsapp-logo.png"
+            alt="WhatsApp"
+            width={200}
+            height={200}
+            className={styles.contactIcon}
           />
-          <a href="https://chat.whatsapp.com/LqzdLnBJDeuFfkvabIriSU" target="_blank" rel="noopener noreferrer">
-            <p>Grup WA Diskusi MABA 2023</p>
+          <a href="https://chat.whatsapp.com/LqzdLnBJDeuFfkvabIriSU" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+            <p>{t('contact_whatsapp_group')}</p>
           </a>
-          <p>DISKUSI CSC 2023</p>
+          <p>{t('contact_whatsapp_description')}</p>
         </div>
 
-        <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Image 
-            src="/email-logo.png" 
-            alt="Email" 
-            width={200} 
-            height={200} 
-            style={{ marginBottom: '10px' }} 
+        <div className={styles.contactItem}>
+          <Image
+            src="/email-logo.png"
+            alt="Email"
+            width={200}
+            height={200}
+            className={styles.contactIcon}
           />
-          <a href="mailto:csc.pnj@gmail.com">
-            <p>Partnership via Email</p>
+          <a href="mailto:csc.pnj@gmail.com" className={styles.contactLink}>
+            <p>{t('contact_email')}</p>
           </a>
           <p>csc.pnj@gmail.com</p>
         </div>
-        
       </div>
-      <p>{t('contact_description')}</p>
+      <p className={styles.contactDescription}>{t('contact_description')}</p>
     </div>
   );
 };
