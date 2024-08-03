@@ -1,7 +1,6 @@
 .languageSwitcher {
     position: relative;
-    display: inline-block;
-    margin-left: 10px;
+    display: flex;
   }
   
 .downArrow {

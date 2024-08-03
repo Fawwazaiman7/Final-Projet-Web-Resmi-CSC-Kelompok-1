@@ -25,16 +25,16 @@ const Footer: React.FC = () => {
           <nav>
             <ul className={styles.footerLinks}>
               <li className={styles.footerLinksItem}>
-                <a href="/about">{t("about_us")}</a>
+                <Link href="/about">{t("about_us")}</Link>
               </li>
               <li className={styles.footerLinksItem}>
-                <a href="/contact">{t("contact_us")}</a>
+                <Link href="/contact">{t("contact_us")}</Link>
               </li>
             </ul>
           </nav>
           <div className={styles.footerSocial}>
             <Link
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/cscpnj?igsh=azcxaXMxdHBva3oz"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.footerSocialLink}

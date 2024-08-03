@@ -9,7 +9,7 @@
   display: flex !important;
   flex: 1 !important;
   justify-content: center !important;
-  gap: 40px !important; /* Atur jarak antar item menjadi lebih besar */
+  gap: 40px !important;
 }
 
 .navbarLeft {
@@ -29,7 +29,7 @@
 }
 
 .navbarBrandSpan {
-  color: #000 !important; /* Pastikan warna teks */
+  color: #000 !important;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -38,23 +38,22 @@
   display: flex !important;
   align-items: center !important;
   margin-left: auto !important;
-  gap: 50px !important; /* Atur jarak antar item */
+  gap: 50px !important;
 }
 
 .navLink,
 .dropdownItem {
-  color: #000000 !important; /* Default link color */
+  color: #000000 !important;
   position: relative;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s, transform 0.3s ease-in-out;
   text-decoration: none !important;
 }
 
 .navLink:hover,
 .dropdownItem:hover {
-  color: #0048ff !important; /* Blue hover link color */
-  transform: scale(1.02); /* Membesarkan teks sedikit */
-  cursor: pointer; /* Tambahkan ini untuk memastikan cursor pointer */
-
+  color: #0048ff !important;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .navLinkActive {
@@ -67,18 +66,22 @@
   content: "";
   position: absolute;
   width: 0;
-  height: 3px; /* Mengatur ketebalan garis menjadi lebih tipis */
-  bottom: -7px; /* Menambahkan sedikit jarak antara teks dan garis bawah */
+  height: 3px;
+  bottom: -7px;
   left: 50%;
-  background-color: #0048ff; /* Warna biru */
-  transition: width 0.3s, left 0.3s;
-  border-radius: 0; /* Menghilangkan border radius agar garis tidak melengkung */
+  background-color: #0048ff;
+  transition: width 0.4s ease-in-out, left 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateX(-50%);
 }
 
 .navLink:hover::before,
 .dropdownItem:hover::before,
 .navLinkActive::before,
 .dropdownItemActive::before {
-  width: 120%; /* Panjang garis bawah lebih dari 100% */
-  left: -10%;
+  width: 110%;
+  left: 50%;
+  opacity: 1;
+  transform: translateX(-50%);
 }

@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../../styles/LanguageSwitcher/LanguageSwitcher.module.css';
 
@@ -9,6 +9,19 @@ const LanguageSwitcher = () => {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
+  const clearLanguagePreference = useCallback(() => {
+    localStorage.removeItem("preferredLanguage");
+  }, []);
+
+  const changeLanguage = useCallback((lng: string, initialLoad: boolean = false) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("preferredLanguage", lng);
+
+    if (!initialLoad) {
+      router.push(router.pathname, router.asPath, { locale: lng });
+    }
+  }, [i18n, router]);
+
   useEffect(() => {
     setMounted(true);
 
@@ -16,7 +29,6 @@ const LanguageSwitcher = () => {
     const supportedLanguages = ["en", "id"];
     const preferredLanguage = localStorage.getItem("preferredLanguage");
 
-    // Prioritaskan preferensi pengguna, lalu bahasa browser, dan terakhir bahasa default
     if (preferredLanguage && supportedLanguages.includes(preferredLanguage)) {
       changeLanguage(preferredLanguage, true);
     } else if (supportedLanguages.includes(browserLanguage)) {
@@ -30,21 +42,7 @@ const LanguageSwitcher = () => {
     return () => {
       window.removeEventListener("beforeunload", clearLanguagePreference);
     };
-  }, []);
-
-  const clearLanguagePreference = () => {
-    localStorage.removeItem("preferredLanguage");
-  };
-
-  const changeLanguage = (lng: string, initialLoad: boolean = false) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem("preferredLanguage", lng);
-
-    // Ubah rute tanpa melakukan reload halaman, kecuali pada load awal
-    if (!initialLoad) {
-      router.push(router.pathname, router.asPath, { locale: lng });
-    }
-  };
+  }, [changeLanguage, clearLanguagePreference]);
 
   if (!mounted) return null;
 

@@ -25,6 +25,4 @@ body.dark-mode {
   color: #ffffff;
 }
 
-:global(.navbar) {
-  background-color: #f8f9fa !important;
-}
+
