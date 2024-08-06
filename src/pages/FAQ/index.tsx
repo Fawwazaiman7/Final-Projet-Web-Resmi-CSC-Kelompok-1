@@ -94,7 +94,6 @@ const Faq = () => {
         text: (
           <div>
             <p>{t("faq_7_text")}</p>
-            <p>{t("faq_7_text_2")}</p>
           </div>
         ),
       },
