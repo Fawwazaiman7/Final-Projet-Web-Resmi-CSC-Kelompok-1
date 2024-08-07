@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           { name: 'About Us', path: '/about' },
           { name: 'Contact Us', path: '/contact' },
           { name: 'Activities', path: '/activities' },
-          { name: 'FAQ', path: '/faq' }
+          { name: 'FAQ', path: '/FAQ' }
         ]}
       />
       <Component {...pageProps} />
