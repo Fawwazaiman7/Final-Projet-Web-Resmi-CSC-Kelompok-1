@@ -1,0 +1,155 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .bannerBg {
+    background: url("https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    margin-bottom: 5vh;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(25, 25, 141, 0.5);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .headingBanner {
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: #f0f0f0;
+    text-decoration: none !important;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .contentSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+  }
+  
+  .contentItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    max-width: 1200px; /* Sesuaikan ukuran maksimal */
+    width: 80%; /* Sesuaikan persentase lebar */
+  }
+  
+  .imageContainer {
+    flex-shrink: 0;
+  }
+  
+  .textContainer {
+    margin-left: 20px;
+    padding: 10px 8px;
+  }
+  
+  .textContainer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #182A69;
+  }
+  
+  .textContainer p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: justify; /* Agar teks menjadi rata kiri-kanan */
+    color: #434343;
+  }
+  
+  .buttonContainer {
+    display: flex;
+  }
+  
+  .button {
+    font-size: 1.2rem;
+    color: #0048ff;
+    text-decoration: none;
+    border: 2px solid #0048ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0048ff;
+    color: #fff;
+  }
+  
+  .spacing {
+    height: 50px;
+  }
+  
+  /* Dark mode styles */
+  :global(.dark-mode) .dark-banner {
+    background: url("https://images.unsplash.com/photo-1585314062618-2510339ab0e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGRhcmt8ZW58MHx8fHwxNjcyOTc0NzU4&ixlib=rb-4.0.3&q=80&w=1080");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  :global(.dark-mode) .container {
+    background: rgba(25, 25, 25, 0.7);
+  }
+  
+  :global(.dark-mode) .headingBanner {
+    color: #6c63ff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contentItem {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .textContainer {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .contentSection {
+      padding: 30px 15px;
+    }
+  
+    .contentItem {
+      max-width: 100%;
+      width: 90%;
+    }
+  
+    .textContainer h2 {
+      font-size: 2rem;
+      text-align: left;
+    }
+  
+    .textContainer p {
+      font-size: 1.2rem;
+    }
+  
+    .button {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+  }
+  
