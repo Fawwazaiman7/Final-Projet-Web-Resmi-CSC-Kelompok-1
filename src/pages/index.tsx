@@ -22,7 +22,7 @@ const Home = () => {
       <section className={styles.contentSection}>
         <div className={styles.contentItem}>
           <div className={styles.imageContainer}>
-            <Image src="/icons/info.png" alt="Tentang CSC" width={200} height={200} />
+            <Image src="" alt="Tentang CSC" width={200} height={200} />
           </div>
           <div className={styles.textContainer}>
             <h2>Tentang CSC</h2>
@@ -35,7 +35,7 @@ const Home = () => {
         <div className={styles.spacing}></div>
         <div className={styles.contentItem}>
           <div className={styles.imageContainer}>
-            <Image src="/icons/question.png" alt="Ngapain aja sih di CSC?" width={200} height={200} />
+            <Image src="" alt="Ngapain aja sih di CSC?" width={200} height={200} />
           </div>
           <div className={styles.textContainer}>
             <h2>Ngapain aja sih di CSC?</h2>
@@ -48,7 +48,7 @@ const Home = () => {
         <div className={styles.spacing}></div>
         <div className={styles.contentItem}>
           <div className={styles.imageContainer}>
-            <Image src="/icons/phone.png" alt="Boleh tanya-tanya dulu?" width={200} height={200} />
+            <Image src="" alt="Boleh tanya-tanya dulu?" width={200} height={200} />
           </div>
           <div className={styles.textContainer}>
             <h2>Boleh tanya-tanya dulu?</h2>
@@ -63,12 +63,5 @@ const Home = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      // Static props
-    },
-  };
-};
 
 export default Home;

@@ -11,9 +11,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     console.log("Navigator language:", navigator.language);
-    console.log("i18n instance:", i18n);
     console.log("i18n detected language:", i18n.language);
-    console.log("i18n functions available:", Object.keys(i18n));
+    console.log('Available translations:', i18n.getResourceBundle(i18n.language, 'common'));
+
+
   }, []);
 
   return (

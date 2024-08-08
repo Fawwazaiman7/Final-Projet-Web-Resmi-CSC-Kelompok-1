@@ -6,8 +6,10 @@ const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { t } = useTranslation('common');
   const [faqData, setFaqData] = useState<{ header: string | JSX.Element; text: string | JSX.Element; }[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     setFaqData([
       {
         header: t("faq_0_header"),
@@ -108,8 +110,12 @@ const Faq = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.title}>{t('faq_title')}</span>
-          <h2 className={styles.subtitle}>{t('faq_subtitle')}</h2>
+          {isMounted && (
+            <>
+              <span className={styles.title}>{t('faq_title')}</span>
+              <h2 className={styles.subtitle}>{t('faq_subtitle')}</h2>
+            </>
+          )}
         </div>
 
         <div className={styles.accordionGrid}>
