@@ -1,27 +1,31 @@
-/* Styling untuk SearchBar */
-
 .searchContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .searchIcon {
-    cursor: pointer;
-  }
-  
-  .searchForm {
-    opacity: 0;
-    width: 0;
-    transition: all 0.3s ease-in-out;
-    overflow: hidden; /* Menyembunyikan bagian input yang tidak terlihat */
-  }
-  
-  .searchFormVisible {
-    opacity: 1;
-    width: 200px; /* Sesuaikan sesuai kebutuhan */
-  }
-  
-  .searchInput {
-    width: 100%;
-  }
-  
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchIcon {
+  cursor: pointer;
+  z-index: 2; /* Pastikan ikon berada di atas input */
+}
+
+.searchForm {
+  position: absolute;
+  right: 0; /* Form muncul dari sebelah kanan, dengan lebarnya ke kiri */
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1; /* Form di bawah ikon */
+}
+
+.searchFormVisible {
+  opacity: 1;
+  right: -8px;
+  width: 200px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.searchInput {
+  width: 100%;
+  padding-left: 25px; /* Beri ruang di sebelah kiri untuk ikon */
+}
