@@ -61,6 +61,23 @@
   color: #0048ff !important;
 }
 
+.navbarVisible {
+  position: sticky !important;
+  top: 0 !important;
+  transform: translateY(0) !important; /* Navbar ditampilkan */
+  transition: transform 0.3s ease-in-out !important;
+  z-index: 1000 !important; /* Agar navbar selalu di atas konten lain */
+}
+
+.navbarHidden {
+  position: sticky !important;
+  top: 0 !important;
+  transform: translateY(-100%); /* Navbar disembunyikan */
+  transition: transform 0.3s ease-in-out !important;
+  z-index: 1000 ! important;
+} 
+
+
 .navLink::before,
 .dropdownItem::before {
   content: "";

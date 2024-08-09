@@ -19,10 +19,11 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     setIsMounted(true);
-    // Set activeIndex based on the current route
     const currentPath = router.pathname;
     const currentIndex = navItems.findIndex(item => item.path === currentPath);
     setActiveIndex(currentIndex);
@@ -40,10 +41,31 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
     }
   }, []);
 
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > lastScrollY) {
+          setIsVisible(false); // Sembunyikan navbar saat scroll ke bawah
+        } else {
+          setIsVisible(true); // Tampilkan navbar saat scroll ke atas
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   if (!isMounted) return null;
 
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light shadow">
+    <nav className={`navbar navbar-expand-md navbar-light bg-light shadow ${isVisible ? styles.navbarVisible : styles.navbarHidden}`}>
       <div className={`${styles.containerFluid} container-fluid`}>
         <div className={styles.navbarLeft}>
           <Link href="/" legacyBehavior>
@@ -77,7 +99,7 @@ function NavBar({ brandName, imageSrcPath, navItems }: NavBarProps) {
                 <a
                   className={`${styles.navLink} ${activeIndex === index ? styles.navLinkActive : ''}`}
                   onClick={(e) => {
-                    e.preventDefault(); // Mencegah perilaku default yang dapat menyebabkan refresh halaman
+                    e.preventDefault();
                     handleClick(index, item.path);
                   }}
                 >

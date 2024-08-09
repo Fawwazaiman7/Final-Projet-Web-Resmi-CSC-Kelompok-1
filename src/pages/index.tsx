@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/Home/Home.module.css";
 import Carousel from "../components/Carousel/Carousel";
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     setIsMounted(true);
@@ -17,7 +19,7 @@ const Home = () => {
       <div className={`${styles.bannerBg} dark-banner`}>
         <div className={styles.container}>
           <h1 className={styles.headingBanner}>
-            Selamat datang di kelompok studi kami
+            {t("welcome")}
           </h1>
         </div>
       </div>
@@ -25,20 +27,16 @@ const Home = () => {
       <section className={styles.contentSection}>
         <div className={styles.contentItem}>
           <div className={styles.imageContainer}>
-            <Image src="" alt="Tentang CSC" width={200} height={200} />
+            <Image src="/info-logo.png" alt={t("about_csc")} width={330} height={330} />
           </div>
           <div className={styles.textContainer}>
-            <h2>Tentang CSC</h2>
+            <h2>{t("about_csc")}</h2>
             <p>
-              Computer Student Club (CSC) adalah kelompok studi mahasiswa di
-              Politeknik Negeri Jakarta yang berfokus pada ranah keamanan siber,
-              pengembangan perangkat lunak, dan IoT. Kami bertujuan untuk
-              mengembangkan minat dan bakat mahasiswa serta meningkatkan
-              prestasi mereka dalam bidang teknologi.
+              {t("about_csc_description")}
             </p>
             <div className={styles.buttonContainer}>
               <a href="/about" className={styles.button}>
-                Ketahui lebih lanjut
+                {t("learn_more")}
               </a>
             </div>
           </div>
@@ -49,24 +47,20 @@ const Home = () => {
         <div className={styles.contentItem}>
           <div className={styles.imageContainer}>
             <Image
-              src=""
-              alt="Ngapain aja sih di CSC?"
-              width={200}
-              height={200}
+              src="/question-sign-logo.png"
+              alt={t("what_we_do")}
+              width={330}
+              height={330}
             />
           </div>
           <div className={styles.textContainer}>
-            <h2>Ngapain aja sih di CSC?</h2>
+            <h2>{t("what_we_do")}</h2>
             <p>
-              Di Computer Student Club (CSC), kami aktif membimbing mahasiswa
-              setiap pekan melalui kelas interaktif dan praktek secara langsung
-              yang membahas berbagai aspek teknologi. Kelas yang kami adakan
-              bertujuan untuk membantu memperluas pemahaman mahasiswa tentang
-              keamanan siber, pengembangan perangkat lunak, dan perangkat IoT.
+              {t("what_we_do_description")}
             </p>
             <div className={styles.buttonContainer}>
               <a href="/faq" className={styles.button}>
-                Halaman FAQ
+                {t("faq_page")}
               </a>
             </div>
           </div>
@@ -76,25 +70,20 @@ const Home = () => {
         <div className={styles.contentItem}>
           <div className={styles.imageContainer}>
             <Image
-              src=""
-              alt="Boleh tanya-tanya dulu?"
-              width={200}
-              height={200}
+              src="/whatsapp-icon.png"
+              alt={t("contact_us_title")}
+              width={330}
+              height={330}
             />
           </div>
           <div className={styles.textContainer}>
-            <h2>Boleh tanya-tanya dulu?</h2>
+            <h2>{t("contact_us_title")}</h2>
             <p>
-              Boleh banget! Kami selalu siap untuk menjawab pertanyaan dari
-              anggota, non-anggota, atau siapa pun yang tertarik. Anda dapat
-              menghubungi kami melalui Whatsapp atau Instagram kami. Kami
-              berkomitmen untuk memberikan jawaban informatif dan membantu
-              menjawab apapun pertanyaan yang anda miliki. Jangan ragu untuk
-              bertanya atau berdiskusi dengan kami!
+              {t("contact_us_description")}
             </p>
             <div className={styles.buttonContainer}>
               <a href="/contact" className={styles.button}>
-                Hubungi kami
+                {t("contact_us_button")}
               </a>
             </div>
           </div>
@@ -102,23 +91,20 @@ const Home = () => {
       </section>
 
       <div className={styles.divisionContainer}>
-        <h1 className={styles.divisionTitle}>Divisi CSC</h1>
+        <h1 className={styles.divisionTitle}>{t("csc_divisions")}</h1>
 
         <div className={styles.divisionContentItem}>
           <div className={styles.divisionImageContainer}>
-            <Image src="" alt="Cyber Security" width={200} height={200} />
+            <Image src="/CyberSec.png" alt={t("cyber_security")} width={430} height={330} />
           </div>
           <div className={styles.divisionTextContainer}>
-            <h2>Cyber Security</h2>
+            <h2>{t("cyber_security")}</h2>
             <p>
-              Divisi Cyber Security adalah wadah bagi mereka yang tertarik dalam
-              dunia hacking. Di sini, kami memahami konsep-konsep esensial
-              tentang keamanan jaringan, eksplorasi sistem operasi Linux, dan
-              penetration testing untuk mengidentifikasi potensi kerentanan.
+              {t("cyber_security_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
               <a href="/CyberSec" className={styles.button}>
-                Ketahui lebih lanjut
+                {t("learn_more")}
               </a>
             </div>
           </div>
@@ -126,20 +112,16 @@ const Home = () => {
 
         <div className={styles.divisionContentItem}>
           <div className={styles.divisionImageContainer}>
-            <Image src="" alt="Software Development" width={200} height={200} />
+            <Image src="/SoftDev.png" alt={t("software_development")} width={430} height={450} />
           </div>
           <div className={styles.divisionTextContainer}>
-            <h2>Software Development</h2>
+            <h2>{t("software_development")}</h2>
             <p>
-              Divisi Software Development adalah lingkungan yang tepat untuk
-              membangun dasar kuat dalam pemrograman. Kami menjelaskan konsep
-              dasar pemrograman yang penting, memandu Anda dalam pengembangan
-              perangkat lunak dari awal hingga akhir, dan mendalam ke dalam
-              konsep Pemrograman Berorientasi Objek (OOP).
+              {t("software_development_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
               <a href="/Softdev" className={styles.button}>
-                Ketahui lebih lanjut
+                {t("learn_more")}
               </a>
             </div>
           </div>
@@ -147,21 +129,16 @@ const Home = () => {
 
         <div className={styles.divisionContentItem}>
           <div className={styles.divisionImageContainer}>
-            <Image src="" alt="Explore" width={200} height={200} />
+            <Image src="/Explore.png" alt={t("explore")} width={430} height={430} />
           </div>
           <div className={styles.divisionTextContainer}>
-            <h2>Explore</h2>
+            <h2>{t("explore")}</h2>
             <p>
-              Divisi Explore memiliki fokus pada Internet of Things (IoT), yang
-              merupakan konsep teknologi yang sedang berkembang. Di sini, kami
-              membantu Anda memahami komponen-komponen komputer dan memberikan
-              kesempatan untuk menggunakan platform Arduino. Kami ingin
-              memperluas pengetahuan teknologi Anda dan mendorong inovasi dalam
-              menciptakan solusi berbasis IoT yang bermanfaat.
+              {t("explore_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
               <a href="/Explore" className={styles.button}>
-                Ketahui lebih lanjut
+                {t("learn_more")}
               </a>
             </div>
           </div>

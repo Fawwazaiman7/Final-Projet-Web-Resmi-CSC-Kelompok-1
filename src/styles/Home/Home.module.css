@@ -48,13 +48,13 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-  max-width: 1200px; /* Sesuaikan ukuran maksimal */
   width: 80%; /* Sesuaikan persentase lebar */
 }
 
 .imageContainer {
   flex-shrink: 0;
 }
+
 
 .textContainer {
   margin-left: 20px;
@@ -104,7 +104,7 @@
   align-items: stretch; /* Ini memastikan semua item memiliki tinggi yang sama */
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
+  padding: 50px;
   background-color: #182a69;
 }
 
@@ -117,7 +117,6 @@
   align-items: flex-start;
   padding: 20px;
   border-radius: 10px;
-  min-height: 400px; /* Sesuaikan nilai ini sesuai dengan kebutuhan */
   margin-bottom: 20px;
   background-color: #1a2b6f; /* Tambahkan background untuk membedakan dengan container */
 }
@@ -137,6 +136,16 @@
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.divisionImageContainer {
+  display: flex;
+  justify-content: center; /* Mengatur posisi gambar di tengah secara horizontal */
+  align-items: center; /* Mengatur posisi gambar di tengah secara vertikal */
+  width: 100%; /* Memastikan kontainer gambar memiliki lebar penuh */
+  height: 100%; /* Memastikan kontainer gambar memiliki tinggi penuh */
 }
 
 
@@ -187,7 +196,7 @@
 }
 
 
-/* Dark mode styles */
+/* Dark Mode Styles */
 :global(.dark-mode) .dark-banner {
   background: url("https://images.unsplash.com/photo-1585314062618-2510339ab0e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGRhcmt8ZW58MHx8fHwxNjcyOTc0NzU4&ixlib=rb-4.0.3&q=80&w=1080");
   background-repeat: no-repeat;
@@ -203,6 +212,63 @@
   color: #6c63ff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
+
+:global(.dark-mode) .textContainer h2 {
+  color: #6c63ff;
+}
+
+:global(.dark-mode) .textContainer p {
+  color: #e0e0e0;
+}
+
+:global(.dark-mode) .button {
+  color: #6c63ff;
+  border-color: #6c63ff;
+}
+
+:global(.dark-mode) .button:hover {
+  background-color: #6c63ff;
+  color: #121212;
+}
+
+:global(.dark-mode) .divisionContainer {
+    background-color: #1a1a2e;
+}
+
+:global(.dark-mode) .divisionTitle {
+  color: #6c63ff;
+}
+
+:global(.dark-mode) .pageContainer {
+  background-color: #25253c;
+  border: 1px solid #353554;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+:global(.dark-mode) .divisionContentItem {
+  background-color: #1a1a2e;
+
+}
+
+:global(.dark-mode) .divisionTextContainer h2 {
+  color: #6c63ff;
+}
+
+:global(.dark-mode) .divisionTextContainer p {
+  color: #e0e0e0;
+}
+
+:global(.dark-mode) .divisionButtonContainer .button {
+  color: #6c63ff;
+  border-color: #6c63ff;
+}
+
+:global(.dark-mode) .divisionButtonContainer .button:hover {
+  background-color: #6c63ff;
+  color: #121212;
+}
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {

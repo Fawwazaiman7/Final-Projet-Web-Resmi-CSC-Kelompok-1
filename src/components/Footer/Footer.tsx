@@ -3,6 +3,8 @@ import { FaInstagram } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import styles from '../../styles/Footer/Footer.module.css';
 import Link from "next/link";
+
+
 const Footer: React.FC = () => {
   const { t, i18n } = useTranslation("common");
   const [isMounted, setIsMounted] = useState(false);

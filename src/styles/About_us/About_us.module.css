@@ -1,0 +1,228 @@
+.pageContainer {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Styling General */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Profile Section */
+.profileSection {
+  background-color: #1a2b6f; /* Tambahkan background untuk membedakan dengan container */
+  padding: 50px 0; /* Padding untuk jarak di dalam section */
+}
+
+.header {
+  text-align: justify;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+.description {
+  font-size: 1.5rem;
+  text-align: justify;
+  color: #f0f0f0;
+}
+
+/* History Section */
+.historySection {
+  background-color: #002855; /* Warna background */
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.historyTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.historyContent h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ade8f4; /* Warna judul */
+}
+
+.historyContent ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.historyContent ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.historyContent ul li::marker {
+  color: #90e0ef; /* Warna bullet points */
+}
+
+.divisionsSection {
+  background-color: #0a015d;
+  padding: 50px 0;
+}
+
+.division {
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.division:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.divisionTitle {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #1a2b6f;
+  border-bottom: 2px solid #1a2b6f;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.divisionDescription {
+  font-size: 1.3rem;
+  color: #333333;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.focusArea {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.focusAreaTitle {
+  font-size: 1.8rem;
+  color: #1a2b6f;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.focusArea ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.focusArea ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #555555;
+  transition: color 0.3s ease;
+}
+
+.focusArea ul li:hover {
+  color: #1a2b6f;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark Mode Styles */
+:global(.dark-mode) .profileSection {
+  background-color: #1a1a2e;
+}
+
+:global(.dark-mode) .title, 
+:global(.dark-mode) .description {
+  color: #e0e0e0;
+}
+
+:global(.dark-mode) .historySection {
+  background-color: #0b1b3a; /* Warna background yang lebih gelap */
+  color: #c7c7c7;
+}
+
+:global(.dark-mode) .historyTitle {
+  color: #9bbdf1;
+}
+
+:global(.dark-mode) .historyContent h3 {
+  color: #b3d8f4;
+}
+
+:global(.dark-mode) .historyContent ul li {
+  color: #c7c7c7;
+}
+
+:global(.dark-mode) .historyContent ul li::marker {
+  color: #8ab5df;
+}
+
+:global(.dark-mode) .divisionsSection {
+  background-color: #12123a; /* Background yang lebih gelap untuk divisi */
+}
+
+:global(.dark-mode) .division {
+  background-color: #232340;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark-mode) .division:hover {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+:global(.dark-mode) .sectionTitle {
+  color: #9bbdf1;
+}
+
+:global(.dark-mode) .divisionTitle {
+  color: #c7c7c7;
+  border-bottom: 2px solid #6c63ff;
+}
+
+:global(.dark-mode) .divisionDescription {
+  color: #e0e0e0;
+}
+
+:global(.dark-mode) .focusAreaTitle {
+  color: #9bbdf1;
+}
+
+:global(.dark-mode) .focusArea ul li {
+  color: #c7c7c7;
+}
+
+:global(.dark-mode) .focusArea ul li:hover {
+  color: #9bbdf1;
+}
