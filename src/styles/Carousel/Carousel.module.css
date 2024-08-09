@@ -1,0 +1,86 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #182a69;
+    padding: 20px;
+  }
+  
+  .carouselTitle {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .carouselWrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(calc(-100% * var(--current-index)));
+  }
+  
+  .carouselSlide {
+    min-width: 15%; /* Sesuaikan dengan jumlah gambar dan ukuran yang diinginkan */
+    height: 250px; /* Kurangi tinggi sesuai keinginan */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .carouselSlide img {
+    border-radius: 10px;
+  }
+  
+  .active .imageOverlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+  }
+  
+  .carouselSlide:hover .imageOverlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .carouselSlide:hover img {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+  }
+  
+  .leftArrow, .rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .leftArrow {
+    left: 10px;
+  }
+  
+  .rightArrow {
+    right: 10px;
+  }
+  

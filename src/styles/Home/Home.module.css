@@ -1,0 +1,270 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bannerBg {
+  background: url("https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  margin-bottom: 5vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(25, 25, 141, 0.5);
+  transition: background 0.3s, color 0.3s;
+}
+
+.headingBanner {
+  font-weight: bold;
+  font-size: 3.5rem;
+  color: #f0f0f0;
+  text-decoration: none !important;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contentSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.contentItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  max-width: 1200px; /* Sesuaikan ukuran maksimal */
+  width: 80%; /* Sesuaikan persentase lebar */
+}
+
+.imageContainer {
+  flex-shrink: 0;
+}
+
+.textContainer {
+  margin-left: 20px;
+  padding: 10px 8px;
+}
+
+.textContainer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #182a69;
+}
+
+.textContainer p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: justify; /* Agar teks menjadi rata kiri-kanan */
+  color: #434343;
+}
+
+.buttonContainer {
+  display: flex;
+}
+
+.button {
+  font-size: 1.2rem;
+  color: #0048ff;
+  text-decoration: none;
+  border: 2px solid #0048ff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #0048ff;
+  color: #fff;
+}
+
+.spacing {
+  height: 50px;
+}
+
+.divisionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch; /* Ini memastikan semua item memiliki tinggi yang sama */
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #182a69;
+}
+
+.divisionContentItem {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Memastikan elemen di dalamnya memiliki jarak yang terdistribusi */
+  text-align: left;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 400px; /* Sesuaikan nilai ini sesuai dengan kebutuhan */
+  margin-bottom: 20px;
+  background-color: #1a2b6f; /* Tambahkan background untuk membedakan dengan container */
+}
+
+.divisionTitle {
+  text-align: center; /* Judul berada di tengah */
+  width: 100%; /* Pastikan judul memenuhi lebar container */
+  font-weight: bold;
+  margin: 50px 0;
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 20px; /* Spacing bawah antara judul dan content items */
+}
+
+.divisionContentItem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.divisionTextContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.divisionTextContainer h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: justify; /* Agar teks menjadi rata kiri-kanan */
+}
+
+.divisionTextContainer p {
+  min-height: 150px; /* Contoh tinggi minimum */
+  font-size: 1.5rem;
+  text-align: justify; 
+  color: #f3f3f3;
+  margin-bottom: 50px;
+}
+
+.divisionButtonContainer {
+  margin-top: auto; /* Menempatkan tombol di bagian bawah */
+  align-self: flex-start; /* Tetapkan posisi tombol ke kiri */
+}
+
+.divisionButtonContainer .button {
+  font-size: 1rem;
+  color: #f0f0f0;
+  text-decoration: none;
+  border: 2px solid #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: left; /* Pastikan teks dalam tombol rata kiri */
+}
+
+.divisionButtonContainer .button:hover {
+  background-color: #0048ff;
+  border: 2px solid #0048ff;
+
+  color: #fff;
+}
+
+
+/* Dark mode styles */
+:global(.dark-mode) .dark-banner {
+  background: url("https://images.unsplash.com/photo-1585314062618-2510339ab0e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGRhcmt8ZW58MHx8fHwxNjcyOTc0NzU4&ixlib=rb-4.0.3&q=80&w=1080");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+:global(.dark-mode) .container {
+  background: rgba(25, 25, 25, 0.7);
+}
+
+:global(.dark-mode) .headingBanner {
+  color: #6c63ff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contentItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Adjustments for very small screens or additional fine-tuning */
+
+  @media (max-width: 768px) {
+    .divisionContentItem {
+      flex-direction: column; /* Stack image and text vertically on smaller screens */
+      text-align: center;
+    }
+  
+    .divisionImageContainer {
+      margin-right: 0; /* Remove margin between image and text for a stacked layout */
+      margin-bottom: 20px; /* Spacing below the image */
+    }
+  
+    .divisionButtonContainer {
+      align-self: center; /* Posisi tombol di tengah untuk layar kecil */
+      margin-top: 20px; /* Tambahkan margin atas untuk ruang */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .divisionTextContainer h2,
+    .divisionTextContainer p {
+      font-size: smaller; /* Adjust text size for smaller screens */
+    }
+  }
+
+  .textContainer {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contentSection {
+    padding: 30px 15px;
+  }
+
+  .contentItem {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .textContainer h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .textContainer p {
+    font-size: 1.2rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
