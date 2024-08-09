@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/Home/Home.module.css";
 import Carousel from "../components/Carousel/Carousel";
+import Link from "next/link";
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
@@ -35,9 +36,9 @@ const Home = () => {
               {t("about_csc_description")}
             </p>
             <div className={styles.buttonContainer}>
-              <a href="/about" className={styles.button}>
+              <Link href="/about" className={styles.button}>
                 {t("learn_more")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -59,9 +60,9 @@ const Home = () => {
               {t("what_we_do_description")}
             </p>
             <div className={styles.buttonContainer}>
-              <a href="/faq" className={styles.button}>
+              <Link href="/faq" className={styles.button}>
                 {t("faq_page")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -82,9 +83,9 @@ const Home = () => {
               {t("contact_us_description")}
             </p>
             <div className={styles.buttonContainer}>
-              <a href="/contact" className={styles.button}>
+              <Link href="/contact" className={styles.button}>
                 {t("contact_us_button")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -103,9 +104,9 @@ const Home = () => {
               {t("cyber_security_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
-              <a href="/CyberSec" className={styles.button}>
+              <Link href="/CyberSec" className={styles.button}>
                 {t("learn_more")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -120,9 +121,9 @@ const Home = () => {
               {t("software_development_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
-              <a href="/Softdev" className={styles.button}>
+              <Link href="/Softdev" className={styles.button}>
                 {t("learn_more")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -137,9 +138,9 @@ const Home = () => {
               {t("explore_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
-              <a href="/Explore" className={styles.button}>
+              <Link href="/Explore" className={styles.button}>
                 {t("learn_more")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
