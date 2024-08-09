@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <script async src="https://cse.google.com/cse.js?cx=b2a21e69260e441db"></script>
         <meta name="google-site-verification" content="CTBMo6gXg0rCMRcY1Aqa7lVem5nSq5MFMUNIrLwXI8Q" />
         {/* Lobster */}
         <link

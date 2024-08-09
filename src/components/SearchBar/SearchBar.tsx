@@ -1,46 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/SearchBar/SearchBar.module.css';
 
 const SearchBar: React.FC = () => {
   const [searchVisible, setSearchVisible] = useState(false);
-  const [isSearchClicked, setIsSearchClicked] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
-
-  const showSearch = () => {
-    setSearchVisible(true);
-  };
-
-  const hideSearch = () => {
-    if (!isSearchClicked) {
-      setSearchVisible(false);
-    }
-  };
-
-  const handleSearchClick = () => {
-    setIsSearchClicked(true);
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (searchInputRef.current && !searchInputRef.current.contains(event.target as Node)) {
-      setIsSearchClicked(false);
-      setSearchVisible(false);
-    }
-  };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    const script = document.createElement('script');
+    script.src = 'https://cse.google.com/cse.js?cx=b2a21e69260e441db';
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
   return (
-    <div
-      className={styles.searchContainer}
-      onMouseEnter={showSearch}
-      onMouseLeave={hideSearch}
-      onClick={handleSearchClick}
+    <div 
+      className={`${styles.searchContainer} ${searchVisible ? styles.searchVisible : ''}`} 
+      onMouseEnter={() => setSearchVisible(true)}
+      onMouseLeave={() => setSearchVisible(false)}
     >
       <Image
         src="/icons8-search-30.png"
@@ -49,16 +25,7 @@ const SearchBar: React.FC = () => {
         className={styles.searchIcon}
         alt="Search"
       />
-      <form className={`${styles.searchForm} ${searchVisible ? styles.searchFormVisible : ''}`} role="search">
-        <input
-          ref={searchInputRef}
-          className={`${styles.searchInput} form-control me-2`}
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-          autoFocus={searchVisible}
-        />
-      </form>
+      <div className="gcse-searchbox-only"></div>
     </div>
   );
 };
