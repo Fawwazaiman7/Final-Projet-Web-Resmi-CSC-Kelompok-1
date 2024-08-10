@@ -29,7 +29,7 @@
 .title {
     display: block;
     margin-bottom: 0.5rem;
-    font-size: 1.125rem;
+    font-size: 2.125rem;
     font-weight: 600;
     color: #4f46e5;
 }
@@ -67,17 +67,6 @@
     text-align: left;
     cursor: pointer;
     flex-grow: 1;
-}
-
-
-.iconContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-    /* background-color: rgba(79, 70, 229, 0.1); */
-    border-radius: 0.5rem;
-    width: 100%;
 }
 
 
@@ -150,12 +139,6 @@
 
 :global(.dark-mode) .accordionButton {
     color: #e6e6e6;
-}
-
-
-
-:global(.dark-mode) .icon {
-    fill: #bb86fc;
 }
 
 :global(.dark-mode) .accordionContent {
