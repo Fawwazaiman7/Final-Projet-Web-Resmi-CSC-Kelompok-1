@@ -113,6 +113,39 @@
     content: none;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .accordionItem {
+        flex: 1 1 calc(50% - 1rem);
+    }
+    .title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .accordionItem {
+        flex: 1 1 100%;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .container {
+        padding: 0 0.5rem;
+    }
+    .accordionButton {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .headertxt {
+        text-align: left;
+        margin-top: 10px;
+    }
+    .accordionContent {
+        padding-left: 1rem;
+    }
+}
+
 /* Dark Mode Styles */
 :global(.dark-mode) .section {
     background-color: #1a1a2e;
