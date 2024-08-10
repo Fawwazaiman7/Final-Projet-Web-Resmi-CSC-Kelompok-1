@@ -4,6 +4,7 @@
   padding: 50px;
   background-color: #f9f9f9;
   border-radius: 10px;
+  flex-wrap: wrap;
 }
 
 .leftSection {
@@ -28,14 +29,11 @@
   margin-bottom: 20px;
 }
 
-
 .joinUsContainer .description {
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 30px;
 }
-
-
 
 .joinUsContainer .joinButton {
   background-color: #4e2bb4;
@@ -47,6 +45,65 @@
   cursor: pointer;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .joinUsContainer {
+    padding: 30px;
+    flex-direction: column;
+    align-items: center; /* Pastikan semua konten berada di tengah */
+  }
+
+  .rightSection {
+    order: -1; /* Pastikan gambar berada di atas */
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .leftSection {
+    padding-right: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center; /* Agar teks di tengah */
+  }
+
+  .joinUsContainer .title {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .joinUsContainer .description {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .joinUsContainer .joinButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .joinUsContainer {
+    padding: 20px;
+  }
+
+  .joinUsContainer .title {
+    font-size: 1.5rem;
+  }
+
+  .joinUsContainer .description {
+    font-size: 0.9rem;
+  }
+
+  .joinUsContainer .joinButton {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 :global(.dark-mode) .joinUsContainer {
