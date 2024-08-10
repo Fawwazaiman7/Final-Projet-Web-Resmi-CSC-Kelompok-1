@@ -1,99 +1,97 @@
-/* Carousel.module.css */
-
 .carouselContainer {
     position: relative;
-    width: 100%;
-    overflow: hidden;
-    background-color: #1a2b6f;
+    width: 100%; /* Lebar penuh untuk kontainer carousel */
+    overflow: hidden; /* Sembunyikan bagian gambar yang keluar dari kontainer */
+    background-color: #1a2b6f; /* Warna latar belakang carousel */
     padding: 80px 0;
     padding-bottom: 90px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Transisi untuk perubahan warna latar belakang */
 }
 
 .carouselTitle {
-    text-align: center;
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 30px;
+    text-align: center; /* Posisikan judul di tengah */
+    font-size: 3.5rem; /* Ukuran font untuk judul */
+    color: #ffffff; /* Warna teks untuk judul */
+    margin-bottom: 30px; /* Spasi bawah untuk judul */
     padding-bottom: 30px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transisi untuk perubahan warna teks */
 }
 
 .carouselWrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Durasi dan transisi animasi */
+    display: flex; /* Atur slide agar berjajar secara horizontal */
+    transition: transform 0.5s ease-in-out; /* Durasi dan transisi untuk animasi */
 }
 
 .carouselSlide {
-    min-width: 15%; /* Sesuaikan dengan jumlah gambar dan ukuran yang diinginkan */
-    height: 250px; /* Kurangi tinggi sesuai keinginan */
+    min-width: 15%; /* Lebar minimum untuk setiap slide */
+    height: 250px; /* Tinggi untuk setiap slide */
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Posisikan gambar di tengah secara horizontal */
+    align-items: center; /* Posisikan gambar di tengah secara vertikal */
     flex-shrink: 0;
 }
 
 .carouselSlide img {
-    border-radius: 10px;
-    transition: filter 0.3s ease;
+    border-radius: 10px; /* Beri radius untuk gambar */
+    transition: filter 0.3s ease; /* Transisi untuk perubahan filter gambar */
 }
 
 .imageOverlay {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+    width: 100%; /* Lebar penuh untuk overlay */
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang untuk overlay dengan transparansi */
+    color: #ffffff; /* Warna teks untuk overlay */
     padding: 10px;
     text-align: center;
-    font-size: 1.2rem;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.3s ease;
+    font-size: 1.2rem; /* Ukuran font untuk teks overlay */
+    opacity: 0; /* Sembunyikan overlay secara default */
+    transform: translateY(100%); /* Posisikan overlay di luar slide secara vertikal */
+    transition: all 0.3s ease; /* Transisi untuk efek overlay */
 }
 
 .carouselSlide:hover .imageOverlay {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Tampilkan overlay saat hover */
+    transform: translateY(0); /* Posisikan overlay di dalam slide */
 }
 
 .leftArrow, .rightArrow {
     position: absolute;
-    top: 60%;
+    top: 60%; /* Posisikan tombol di tengah vertikal */
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang dengan transparansi untuk tombol */
     color: white;
     border: none;
-    padding: 25px; /* Adjust the padding for proper size */
+    padding: 25px; /* Sesuaikan padding untuk ukuran yang tepat */
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 50%; /* Bentuk tombol menjadi lingkaran */
     z-index: 2;
-    font-size: 20px; /* Adjust font size for arrow icons */
-    line-height: 0; /* Ensure the icons are centered */
+    font-size: 20px; /* Sesuaikan ukuran font untuk ikon panah */
+    line-height: 0; /* Pastikan ikon berada di tengah */
 }
 
-/* Ensure the arrows are placed correctly */
+/* Pastikan tombol panah ditempatkan dengan benar */
 .leftArrow {
-    left: 20px; /* Adjust to position the arrow properly */
+    left: 20px; /* Posisi tombol kiri */
 }
 
 .rightArrow {
-    right: 20px; /* Adjust to position the arrow properly */
+    right: 20px; /* Posisi tombol kanan */
 }
 
 /* Dark Mode Styles */
 :global(.dark-mode) .carouselContainer {
-    background-color: #1a1a2e;
-    border: 1px solid #353554;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    background-color: #1a1a2e; /* Warna latar belakang untuk mode gelap */
+    border: 1px solid #353554; /* Beri border untuk mode gelap */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
 }
 
 :global(.dark-mode) .carouselTitle {
-    color: #6c63ff;
+    color: #6c63ff; /* Warna teks untuk judul dalam mode gelap */
 }
 
 :global(.dark-mode) .imageOverlay {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000000;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang untuk overlay dalam mode gelap */
+    color: #000000; /* Warna teks untuk overlay dalam mode gelap */
 }

@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: 20px; /* Awalnya hanya menunjukkan ikon */
-  transition: width 0.3s ease-in-out;
+  width: 20px; /* Lebar awal hanya untuk ikon */
+  transition: width 0.3s ease-in-out; /* Transisi lebar untuk efek saat hover */
   overflow: hidden;
 }
 
@@ -14,21 +14,21 @@
 .searchIcon {
   z-index: 2;
   cursor: pointer;
-  margin-right: 10px; /* Ruang antara ikon dan input */
-  transition: opacity 0.3s ease-in-out; /* Efek fade out */
+  margin-right: 10px; /* Jarak antara ikon dan input */
+  transition: opacity 0.3s ease-in-out; /* Efek fade out untuk ikon */
 }
 
 .gcse-searchbox-only {
   width: 100%;
-  opacity: 0;
+  opacity: 0; /* Sembunyikan input search */
   transition: opacity 0.3s ease-in-out;
   z-index: 1; /* Input berada di bawah ikon */
 }
 
 .searchVisible .gcse-searchbox-only {
-  opacity: 1; /* Muncul saat hover */
+  opacity: 1; /* Tampilkan input search saat hover */
 }
 
 .searchVisible .searchIcon {
-  opacity: 0; /* Ikon menghilang dengan efek fade-out */
+  opacity: 0; /* Sembunyikan ikon saat hover */
 }

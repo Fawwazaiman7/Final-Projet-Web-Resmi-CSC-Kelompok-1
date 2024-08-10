@@ -1,123 +1,123 @@
 .joinUsContainer {
-  display: flex;
-  align-items: center;
-  padding: 50px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  flex-wrap: wrap;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+  padding: 50px; /* Memberikan padding di sekitar kontainer */
+  background-color: #f9f9f9; /* Warna latar belakang putih terang */
+  border-radius: 10px; /* Membuat sudut kontainer menjadi bulat */
+  flex-wrap: wrap; /* Mengizinkan pembungkusan elemen saat tidak cukup ruang */
 }
 
 .leftSection {
-  flex: 1;
-  padding-right: 50px;
+  flex: 1; /* Mengisi ruang yang tersedia */
+  padding-right: 50px; /* Memberikan jarak di sebelah kanan */
 }
 
 .rightSection {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1; /* Mengisi ruang yang tersedia */
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  justify-content: center; /* Memusatkan elemen secara horizontal */
+  align-items: center; /* Memusatkan elemen secara vertikal */
 }
 
 .dark-mode .joinUsContainer {
-  background-color: #1e1e1e !important;
+  background-color: #1e1e1e !important; /* Warna latar belakang mode gelap */
 }
 
 .joinUsContainer .title {
-  font-size: 2.5rem;
-  color: #4e2bb4;
-  margin-bottom: 20px;
+  font-size: 2.5rem; /* Ukuran teks yang besar */
+  color: #4e2bb4; /* Warna teks utama */
+  margin-bottom: 20px; /* Jarak bawah teks */
 }
 
 .joinUsContainer .description {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 30px;
+  font-size: 1.2rem; /* Ukuran teks yang lebih kecil */
+  color: #555; /* Warna teks lebih gelap */
+  margin-bottom: 30px; /* Jarak bawah teks */
 }
 
 .joinUsContainer .joinButton {
-  background-color: #4e2bb4;
-  color: #fff;
-  padding: 15px 30px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s;
+  background-color: #4e2bb4; /* Warna latar tombol */
+  color: #fff; /* Warna teks tombol */
+  padding: 15px 30px; /* Padding di dalam tombol */
+  font-size: 1rem; /* Ukuran teks tombol */
+  border: none; /* Menghilangkan border */
+  border-radius: 25px; /* Membuat sudut tombol menjadi bulat */
+  cursor: pointer; /* Menambahkan kursor pointer saat di-hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+  transition: background-color 0.3s, transform 0.3s; /* Transisi halus untuk perubahan warna latar belakang dan transformasi */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .joinUsContainer {
-    padding: 30px;
-    flex-direction: column;
+    padding: 30px; /* Mengurangi padding pada layar yang lebih kecil */
+    flex-direction: column; /* Mengubah layout menjadi vertikal pada layar kecil */
     align-items: center; /* Pastikan semua konten berada di tengah */
   }
 
   .rightSection {
-    order: -1; /* Pastikan gambar berada di atas */
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 20px;
+    order: -1; /* Pastikan gambar berada di atas pada layar kecil */
+    width: 100%; /* Lebar penuh */
+    justify-content: center; /* Memusatkan konten */
+    margin-bottom: 20px; /* Memberikan jarak bawah */
   }
 
   .leftSection {
-    padding-right: 0;
-    margin-bottom: 30px;
-    width: 100%;
-    text-align: center; /* Agar teks di tengah */
+    padding-right: 0; /* Menghilangkan padding kanan pada layar kecil */
+    margin-bottom: 30px; /* Memberikan jarak bawah */
+    width: 100%; /* Lebar penuh */
+    text-align: center; /* Memusatkan teks */
   }
 
   .joinUsContainer .title {
-    font-size: 2rem;
-    text-align: center;
-    width: 100%;
+    font-size: 2rem; /* Mengurangi ukuran teks judul */
+    text-align: center; /* Memusatkan teks */
+    width: 100%; /* Lebar penuh */
   }
 
   .joinUsContainer .description {
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
+    font-size: 1rem; /* Mengurangi ukuran teks deskripsi */
+    text-align: center; /* Memusatkan teks */
+    width: 100%; /* Lebar penuh */
   }
 
   .joinUsContainer .joinButton {
-    width: 100%;
-    text-align: center;
+    width: 100%; /* Tombol memenuhi lebar kontainer */
+    text-align: center; /* Memusatkan teks tombol */
   }
 }
 
 @media (max-width: 480px) {
   .joinUsContainer {
-    padding: 20px;
+    padding: 20px; /* Mengurangi padding pada layar yang lebih kecil */
   }
 
   .joinUsContainer .title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Mengurangi ukuran teks judul */
   }
 
   .joinUsContainer .description {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Mengurangi ukuran teks deskripsi */
   }
 
   .joinUsContainer .joinButton {
-    padding: 12px 20px;
-    font-size: 0.9rem;
+    padding: 12px 20px; /* Mengurangi padding di dalam tombol */
+    font-size: 0.9rem; /* Mengurangi ukuran teks tombol */
   }
 }
 
 :global(.dark-mode) .joinUsContainer {
-  background-color: #1e1e1e;
+  background-color: #1e1e1e; /* Warna latar belakang mode gelap */
 }
 
 :global(.dark-mode) .joinUsContainer .title {
-  color: #9c27b0;
+  color: #9c27b0; /* Warna teks judul dalam mode gelap */
 }
 
 :global(.dark-mode) .joinUsContainer .description {
-  color: #ffffff;
+  color: #ffffff; /* Warna teks deskripsi dalam mode gelap */
 }
 
 :global(.dark-mode) .joinUsContainer .joinButton {
-  background-color: #9c27b0;
+  background-color: #9c27b0; /* Warna latar belakang tombol dalam mode gelap */
 }

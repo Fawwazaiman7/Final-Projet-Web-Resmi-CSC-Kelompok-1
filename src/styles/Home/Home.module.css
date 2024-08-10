@@ -1,175 +1,171 @@
 .pageContainer {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-direction: column; /* Susunan kolom untuk elemen di dalamnya */
+  min-height: 100vh; /* Menetapkan tinggi minimum 100% dari viewport */
 }
 
 .bannerBg {
-  background: url("https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  height: 100vh;
-  margin-bottom: 5vh;
-  transition: background 0.3s, color 0.3s;
+  background: url("https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); /* Menetapkan gambar background */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar background */
+  background-size: cover; /* Mengatur ukuran gambar agar menutupi seluruh kontainer */
+  background-position: center; /* Memusatkan gambar background */
+  position: relative; /* Menetapkan posisi relatif */
+  height: 100vh; /* Menetapkan tinggi penuh layar */
+  margin-bottom: 5vh; /* Memberikan margin bawah sebesar 5% dari tinggi viewport */
+  transition: background 0.3s, color 0.3s; /* Menambahkan transisi halus untuk perubahan background dan warna */
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(25, 25, 141, 0.5);
-  transition: background 0.3s, color 0.3s;
+  width: 100%; /* Lebar kontainer 100% */
+  height: 100%; /* Tinggi kontainer 100% */
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-direction: column; /* Susunan kolom untuk elemen di dalamnya */
+  justify-content: center; /* Mengatur konten untuk berpusat secara vertikal */
+  align-items: center; /* Mengatur konten untuk berpusat secara horizontal */
+  background: rgba(25, 25, 141, 0.5); /* Memberikan latar belakang semi-transparan */
+  transition: background 0.3s, color 0.3s; /* Transisi halus untuk perubahan background dan warna */
 }
 
 .headingBanner {
-  font-weight: bold;
-  font-size: 3.5rem;
-  color: #f0f0f0;
-  text-decoration: none !important;
-  text-align: center;
-  margin-bottom: 50px;
+  font-weight: bold; /* Memberikan efek tebal pada teks */
+  font-size: 3.5rem; /* Ukuran teks yang besar */
+  color: #f0f0f0; /* Warna teks terang */
+  text-decoration: none !important; /* Menghapus dekorasi teks */
+  text-align: center; /* Memusatkan teks */
+  margin-bottom: 50px; /* Memberikan jarak bawah */
 }
 
 .contentSection {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px;
+  flex: 1; /* Mengisi ruang yang tersedia */
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-direction: column; /* Susunan kolom untuk elemen di dalamnya */
+  align-items: center; /* Mengatur konten untuk berpusat secara horizontal */
+  padding: 50px 20px; /* Memberikan padding dalam dan luar */
 }
 
 .contentItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
-  width: 80%; /* Sesuaikan persentase lebar */
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  align-items: center; /* Mengatur konten untuk berpusat secara horizontal */
+  justify-content: center; /* Memusatkan konten secara horizontal */
+  margin-bottom: 50px; /* Memberikan jarak bawah */
+  width: 80%; /* Lebar konten item sebesar 80% */
 }
 
 .imageContainer {
-  flex-shrink: 0;
+  flex-shrink: 0; /* Menghindari pengurangan ukuran gambar */
 }
 
-
 .textContainer {
-  margin-left: 20px;
-  padding: 10px 8px;
+  margin-left: 20px; /* Memberikan jarak di sebelah kiri */
+  padding: 10px 8px; /* Memberikan padding untuk teks */
 }
 
 .textContainer h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #182a69;
+  font-size: 2.5rem; /* Ukuran teks yang besar */
+  margin-bottom: 10px; /* Memberikan jarak bawah */
+  color: #182a69; /* Warna teks */
 }
 
 .textContainer p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  text-align: justify; /* Agar teks menjadi rata kiri-kanan */
-  color: #434343;
+  font-size: 1.5rem; /* Ukuran teks yang lebih kecil */
+  margin-bottom: 20px; /* Memberikan jarak bawah */
+  text-align: justify; /* Menyusun teks rata kiri-kanan */
+  color: #434343; /* Warna teks */
 }
 
 .buttonContainer {
-  display: flex;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
 }
 
 .button {
-  font-size: 1.2rem;
-  color: #0048ff;
-  text-decoration: none;
-  border: 2px solid #0048ff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  font-size: 1.2rem; /* Ukuran teks tombol */
+  color: #0048ff; /* Warna teks */
+  text-decoration: none; /* Menghapus dekorasi teks */
+  border: 2px solid #0048ff; /* Menambahkan border biru */
+  padding: 10px 20px; /* Memberikan padding dalam tombol */
+  border-radius: 5px; /* Membuat sudut tombol menjadi bulat */
+  transition: background-color 0.3s, color 0.3s; /* Transisi halus untuk perubahan warna latar belakang dan teks */
 }
 
 .button:hover {
-  background-color: #0048ff;
-  color: #fff;
+  background-color: #0048ff; /* Warna latar belakang saat di-hover */
+  color: #fff; /* Warna teks saat di-hover */
 }
 
 .spacing {
-  height: 50px;
+  height: 50px; /* Tinggi spasi */
 }
 
 .divisionContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch; /* Ini memastikan semua item memiliki tinggi yang sama */
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 50px;
-  background-color: #182a69;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-direction: row; /* Menyusun elemen dalam satu baris */
+  justify-content: space-between; /* Menyusun elemen dengan spasi yang sama di antara mereka */
+  align-items: stretch; /* Memastikan semua item memiliki tinggi yang sama */
+  flex-wrap: wrap; /* Mengizinkan pembungkusan elemen saat tidak cukup ruang */
+  gap: 20px; /* Jarak antara elemen */
+  padding: 50px; /* Padding luar kontainer */
+  background-color: #182a69; /* Warna latar belakang */
 }
 
 .divisionContentItem {
-  flex: 1 1 30%;
-  display: flex;
-  flex-direction: column;
+  flex: 1 1 30%; /* Membuat item responsif dengan dasar 30% */
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-direction: column; /* Menyusun elemen secara vertikal */
   justify-content: space-between; /* Memastikan elemen di dalamnya memiliki jarak yang terdistribusi */
-  text-align: left;
-  align-items: flex-start;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  background-color: #1a2b6f; /* Tambahkan background untuk membedakan dengan container */
+  text-align: left; /* Teks rata kiri */
+  align-items: flex-start; /* Teks di sebelah kiri */
+  padding: 20px; /* Padding luar kontainer */
+  border-radius: 10px; /* Membuat sudut kontainer menjadi bulat */
+  margin-bottom: 20px; /* Jarak bawah kontainer */
+  background-color: #1a2b6f; /* Warna latar belakang */
 }
 
 .divisionTitle {
   text-align: center; /* Judul berada di tengah */
   width: 100%; /* Pastikan judul memenuhi lebar container */
-  font-weight: bold;
-  margin: 50px 0;
-  font-size: 3.5rem;
-  color: #ffffff;
-  margin-bottom: 20px; /* Spacing bawah antara judul dan content items */
+  font-weight: bold; /* Memberikan efek tebal pada teks */
+  margin: 50px 0; /* Jarak atas dan bawah */
+  font-size: 3.5rem; /* Ukuran teks yang besar */
+  color: #ffffff; /* Warna teks putih */
+  margin-bottom: 20px; /* Jarak bawah antara judul dan content items */
 }
 
 .divisionContentItem img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  justify-content: center;
-  align-items: center;
+  max-width: 100%; /* Memastikan gambar tidak melampaui lebar container */
+  height: auto; /* Menyesuaikan tinggi gambar secara proporsional */
+  border-radius: 10px; /* Membuat sudut gambar menjadi bulat */
+  margin-bottom: 10px; /* Jarak bawah gambar */
 }
 
 .divisionImageContainer {
-  display: flex;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
   justify-content: center; /* Mengatur posisi gambar di tengah secara horizontal */
   align-items: center; /* Mengatur posisi gambar di tengah secara vertikal */
   width: 100%; /* Memastikan kontainer gambar memiliki lebar penuh */
   height: 100%; /* Memastikan kontainer gambar memiliki tinggi penuh */
 }
 
-
 .divisionTextContainer {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-grow: 1; /* Memastikan elemen ini mengisi ruang yang tersisa */
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  justify-content: space-between; /* Memastikan elemen di dalamnya memiliki jarak yang terdistribusi */
+  height: 100%; /* Tinggi penuh kontainer */
 }
 
 .divisionTextContainer h2 {
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  text-align: justify; /* Agar teks menjadi rata kiri-kanan */
+  font-size: 2.5rem; /* Ukuran teks yang besar */
+  color: #ffffff; /* Warna teks putih */
+  margin-bottom: 10px; /* Jarak bawah teks */
+  text-align: justify; /* Menyusun teks rata kiri-kanan */
 }
 
 .divisionTextContainer p {
-  min-height: 150px; /* Contoh tinggi minimum */
-  font-size: 1.5rem;
-  text-align: justify; 
-  color: #f3f3f3;
-  margin-bottom: 50px;
+  min-height: 150px; /* Tinggi minimum untuk paragraf */
+  font-size: 1.5rem; /* Ukuran teks yang lebih kecil */
+  text-align: justify; /* Menyusun teks rata kiri-kanan */
+  color: #f3f3f3; /* Warna teks terang */
+  margin-bottom: 50px; /* Jarak bawah */
 }
 
 .divisionButtonContainer {
@@ -178,152 +174,142 @@
 }
 
 .divisionButtonContainer .button {
-  font-size: 1rem;
-  color: #f0f0f0;
-  text-decoration: none;
-  border: 2px solid #f0f0f0;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-  text-align: left; /* Pastikan teks dalam tombol rata kiri */
+  font-size: 1rem; /* Ukuran teks tombol */
+  color: #f0f0f0; /* Warna teks */
+  text-decoration: none; /* Menghapus dekorasi teks */
+  border: 2px solid #f0f0f0; /* Border putih */
+  padding: 10px 20px; /* Padding dalam tombol */
+  border-radius: 5px; /* Membuat sudut tombol menjadi bulat */
+  transition: background-color 0.3s, color 0.3s; /* Transisi halus untuk perubahan warna latar belakang dan teks */
 }
 
 .divisionButtonContainer .button:hover {
-  background-color: #0048ff;
-  border: 2px solid #0048ff;
-
-  color: #fff;
+  background-color: #0048ff; /* Warna latar belakang saat di-hover */
+  border: 2px solid #0048ff; /* Warna border saat di-hover */
+  color: #fff; /* Warna teks saat di-hover */
 }
-
 
 /* Dark Mode Styles */
 :global(.dark-mode) .dark-banner {
-  background: url("https://images.unsplash.com/photo-1585314062618-2510339ab0e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGRhcmt8ZW58MHx8fHwxNjcyOTc0NzU4&ixlib=rb-4.0.3&q=80&w=1080");
+  background: url("https://images.unsplash.com/photo-1585314062618-2510339ab0e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGRhcmt8ZW58MHx8fHwxNjcyOTc0NzU4&ixlib=rb-4.0.3&q=80&w=1080"); /* Gambar background untuk mode gelap */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 :global(.dark-mode) .container {
-  background: rgba(25, 25, 25, 0.7);
+  background: rgba(25, 25, 25, 0.7); /* Background gelap semi-transparan */
 }
 
 :global(.dark-mode) .headingBanner {
-  color: #6c63ff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  color: #6c63ff; /* Warna teks dalam mode gelap */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bayangan teks */
 }
 
 :global(.dark-mode) .textContainer h2 {
-  color: #6c63ff;
+  color: #6c63ff; /* Warna judul dalam mode gelap */
 }
 
 :global(.dark-mode) .textContainer p {
-  color: #e0e0e0;
+  color: #e0e0e0; /* Warna paragraf dalam mode gelap */
 }
 
 :global(.dark-mode) .button {
-  color: #6c63ff;
-  border-color: #6c63ff;
+  color: #6c63ff; /* Warna teks tombol dalam mode gelap */
+  border-color: #6c63ff; /* Warna border dalam mode gelap */
 }
 
 :global(.dark-mode) .button:hover {
-  background-color: #6c63ff;
-  color: #121212;
+  background-color: #6c63ff; /* Warna latar tombol saat di-hover */
+  color: #121212; /* Warna teks saat di-hover */
 }
 
 :global(.dark-mode) .divisionContainer {
-    background-color: #1a1a2e;
+    background-color: #1a1a2e; /* Background divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionTitle {
-  color: #6c63ff;
+  color: #6c63ff; /* Warna judul divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .pageContainer {
-  background-color: #25253c;
-  border: 1px solid #353554;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  background-color: #25253c; /* Background halaman dalam mode gelap */
+  border: 1px solid #353554; /* Border halaman dalam mode gelap */
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Bayangan halaman dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionContentItem {
-  background-color: #1a1a2e;
-
+  background-color: #1a1a2e; /* Background item divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionTextContainer h2 {
-  color: #6c63ff;
+  color: #6c63ff; /* Warna judul item divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionTextContainer p {
-  color: #e0e0e0;
+  color: #e0e0e0; /* Warna teks item divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionButtonContainer .button {
-  color: #6c63ff;
-  border-color: #6c63ff;
+  color: #6c63ff; /* Warna teks tombol dalam mode gelap */
+  border-color: #6c63ff; /* Warna border tombol dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionButtonContainer .button:hover {
-  background-color: #6c63ff;
-  color: #121212;
+  background-color: #6c63ff; /* Warna latar tombol saat di-hover */
+  color: #121212; /* Warna teks saat di-hover */
 }
-
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .contentItem {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Mengubah layout menjadi vertikal pada layar kecil */
+    align-items: center; /* Memusatkan konten secara horizontal */
+    text-align: center; /* Memusatkan teks */
   }
   
-  /* Adjustments for very small screens or additional fine-tuning */
-
-  @media (max-width: 768px) {
-    .divisionContentItem {
-      flex-direction: column; /* Stack image and text vertically on smaller screens */
-      text-align: center;
-    }
+  .divisionContentItem {
+    flex-direction: column; /* Menyusun gambar dan teks secara vertikal pada layar kecil */
+    text-align: center; /* Memusatkan teks */
+  }
   
-    .divisionImageContainer {
-      margin-right: 0; /* Remove margin between image and text for a stacked layout */
-      margin-bottom: 20px; /* Spacing below the image */
-    }
+  .divisionImageContainer {
+    margin-right: 0; /* Menghilangkan margin di sebelah kanan pada layar kecil */
+    margin-bottom: 20px; /* Memberikan jarak bawah pada gambar */
+  }
   
-    .divisionButtonContainer {
-      align-self: center; /* Posisi tombol di tengah untuk layar kecil */
-      margin-top: 20px; /* Tambahkan margin atas untuk ruang */
-    }
+  .divisionButtonContainer {
+    align-self: center; /* Memusatkan tombol pada layar kecil */
+    margin-top: 20px; /* Memberikan jarak atas pada tombol */
   }
 
   .textContainer {
-    margin-left: 0;
-    margin-top: 20px;
+    margin-left: 0; /* Menghilangkan margin kiri pada layar kecil */
+    margin-top: 20px; /* Memberikan jarak atas pada teks */
   }
 }
 
 @media (max-width: 1200px) {
   .contentSection {
-    padding: 30px 15px;
+    padding: 30px 15px; /* Mengurangi padding pada layar yang lebih kecil */
   }
 
   .contentItem {
-    max-width: 100%;
-    width: 90%;
+    max-width: 100%; /* Membatasi lebar konten */
+    width: 90%; /* Menyesuaikan lebar konten */
   }
 
   .textContainer h2 {
-    font-size: 2rem;
-    text-align: left;
+    font-size: 2rem; /* Mengurangi ukuran teks judul */
+    text-align: left; /* Teks rata kiri */
   }
 
   .textContainer p {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Mengurangi ukuran teks paragraf */
   }
 
   .button {
-    font-size: 1rem;
-    padding: 8px 16px;
+    font-size: 1rem; /* Mengurangi ukuran teks tombol */
+    padding: 8px 16px; /* Mengurangi padding tombol */
   }
 }

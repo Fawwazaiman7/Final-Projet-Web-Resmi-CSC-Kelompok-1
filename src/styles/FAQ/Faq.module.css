@@ -1,214 +1,214 @@
 .section {
-  position: relative;
-  padding: 5rem 0 6rem;
-  background-color: #ffffff;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; /* Posisi relatif untuk penempatan elemen secara bebas */
+  padding: 5rem 0 6rem; /* Padding atas dan bawah */
+  background-color: #ffffff; /* Warna latar belakang putih */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transisi halus untuk perubahan warna latar belakang dan teks */
 }
 
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  background-color: #ffffff;
+  max-width: 1100px; /* Lebar maksimum container */
+  margin: 0 auto; /* Mengatur margin auto untuk memusatkan container */
+  padding: 0 1rem; /* Padding kiri dan kanan */
+  background-color: #ffffff; /* Warna latar belakang putih */
 }
 
 .header {
-  max-width: 650px;
-  margin: 0 auto 2.5rem;
-  text-align: center;
-  color: #1f2937;
+  max-width: 650px; /* Lebar maksimum header */
+  margin: 0 auto 2.5rem; /* Margin auto untuk memusatkan, dengan margin bawah */
+  text-align: center; /* Teks berada di tengah */
+  color: #1f2937; /* Warna teks */
 }
 
 .title {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #4f46e5;
+  display: block; /* Tampilan blok untuk memisahkan elemen */
+  margin-bottom: 0.5rem; /* Margin bawah */
+  font-size: 1.125rem; /* Ukuran teks */
+  font-weight: 600; /* Ketebalan teks */
+  color: #4f46e5; /* Warna teks utama */
 }
 
 .subtitle {
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  margin-bottom: 1rem; /* Margin bawah */
+  font-size: 2.5rem; /* Ukuran teks besar */
+  font-weight: 700; /* Ketebalan teks */
+  color: #1f2937; /* Warna teks utama */
 }
 
 .accordionGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-wrap: wrap; /* Mengizinkan pembungkusan elemen saat tidak cukup ruang */
+  gap: 1.5rem; /* Jarak antar elemen */
 }
 
 .accordionItem {
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  box-shadow: 0px 20px 95px 0px rgba(201, 203, 204, 0.3);
-  padding: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
-  flex: 1 1 calc(33.333% - 1.5rem);
-  display: flex;
-  flex-direction: column;
+  background-color: #ffffff; /* Warna latar belakang putih */
+  border-radius: 0.5rem; /* Membuat sudut item menjadi bulat */
+  box-shadow: 0px 20px 95px 0px rgba(201, 203, 204, 0.3); /* Bayangan untuk memberikan efek kedalaman */
+  padding: 1rem; /* Padding dalam item */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transisi halus untuk perubahan transformasi dan bayangan */
+  overflow: hidden; /* Menghindari konten melampaui batas */
+  flex: 1 1 calc(33.333% - 1.5rem); /* Mengatur lebar item untuk responsivitas */
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  flex-direction: column; /* Menyusun elemen secara vertikal */
 }
 
 @media (max-width: 768px) {
   .accordionItem {
-    flex: 1 1 calc(50% - 1rem);
+    flex: 1 1 calc(50% - 1rem); /* Mengatur lebar item untuk layar lebih kecil */
   }
 }
 
 @media (max-width: 480px) {
   .accordionItem {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Mengatur lebar item untuk layar sangat kecil */
   }
   
   .subtitle {
-    font-size: 2rem;
+    font-size: 2rem; /* Mengurangi ukuran teks subtitle */
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 1rem; /* Mengurangi ukuran teks title */
   }
 
   .container {
-    padding: 0 0.5rem;
+    padding: 0 0.5rem; /* Mengurangi padding untuk layar kecil */
   }
 }
 
 .accordionItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 25px 100px 0px rgba(201, 203, 204, 0.35);
+  transform: translateY(-5px); /* Menaikkan item sedikit saat di-hover */
+  box-shadow: 0px 25px 100px 0px rgba(201, 203, 204, 0.35); /* Menambahkan bayangan lebih besar saat di-hover */
 }
 
 .accordionButton {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
-  cursor: pointer;
-  flex-grow: 1;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  align-items: center; /* Memusatkan konten secara vertikal */
+  width: 100%; /* Lebar penuh tombol */
+  background: none; /* Menghapus background default */
+  border: none; /* Menghapus border default */
+  padding: 0; /* Menghapus padding default */
+  text-align: left; /* Teks rata kiri */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat di-hover */
+  flex-grow: 1; /* Memastikan tombol mengisi ruang yang tersedia */
 }
 
 .iconContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-  background-color: rgba(79, 70, 229, 0.1);
-  border-radius: 0.5rem;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  display: flex; /* Mengatur elemen anaknya dalam format fleksibel */
+  align-items: center; /* Memusatkan konten secara vertikal */
+  justify-content: center; /* Memusatkan konten secara horizontal */
+  margin-right: 1rem; /* Margin kanan */
+  background-color: rgba(79, 70, 229, 0.1); /* Warna background untuk ikon */
+  border-radius: 0.5rem; /* Membuat sudut ikon menjadi bulat */
+  width: 40px; /* Lebar kontainer ikon */
+  height: 40px; /* Tinggi kontainer ikon */
+  min-width: 40px; /* Lebar minimum kontainer ikon */
+  min-height: 40px; /* Tinggi minimum kontainer ikon */
 }
 
 .icon {
-  fill: #4f46e5;
-  transition: transform 0.2s ease;
+  fill: #4f46e5; /* Warna ikon */
+  transition: transform 0.2s ease; /* Transisi halus untuk rotasi ikon */
 }
 
 .iconActive {
-  transform: rotate(180deg);
+  transform: rotate(180deg); /* Rotasi ikon saat item FAQ aktif */
 }
 
 .accordionHeader {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1f2937;
-  flex-grow: 1;
+  font-size: 1.125rem; /* Ukuran teks header FAQ */
+  font-weight: 600; /* Ketebalan teks */
+  color: #1f2937; /* Warna teks utama */
+  flex-grow: 1; /* Memastikan header mengisi ruang yang tersedia */
 }
 
 .accordionContent {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  margin-top: 1rem;
-  padding-left: 2.5rem;
-  color: #4b5563;
+  max-height: 0; /* Tinggi maksimum konten saat tertutup */
+  overflow: hidden; /* Menghindari konten melampaui batas */
+  transition: max-height 0.2s ease-out; /* Transisi halus untuk perubahan tinggi */
+  margin-top: 1rem; /* Margin atas untuk konten */
+  padding-left: 2.5rem; /* Padding kiri untuk konten */
+  color: #4b5563; /* Warna teks konten */
 }
 
 .active .accordionContent {
-  max-height: 1000px;
+  max-height: 1000px; /* Tinggi maksimum konten saat aktif */
 }
 
 .accordionContent ul {
-  list-style-type: none;
-  padding-left: 1.5rem;
-  margin: 0.5rem 0;
+  list-style-type: none; /* Menghapus tanda bullet default */
+  padding-left: 1.5rem; /* Padding kiri untuk daftar */
+  margin: 0.5rem 0; /* Margin vertikal untuk daftar */
 }
 
 .accordionContent ul ul {
-  list-style-type: none;
-  padding-left: 1.5rem;
+  list-style-type: none; /* Menghapus tanda bullet default untuk daftar dalam */
+  padding-left: 1.5rem; /* Padding kiri untuk daftar dalam */
 }
 
 .accordionContent li::before {
-  content: "•";
-  color: #4f46e5;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  content: "•"; /* Mengatur konten sebelum daftar */
+  color: #4f46e5; /* Warna bullet */
+  font-weight: bold; /* Ketebalan bullet */
+  display: inline-block; /* Tampilan inline-block */
+  width: 1em; /* Lebar bullet */
+  margin-left: -1em; /* Margin kiri negatif untuk bullet */
 }
 
 .accordionContent .noBullet {
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: 0;
+  list-style-type: none; /* Menghapus tanda bullet */
+  padding-left: 0; /* Menghapus padding kiri */
+  margin-left: 0; /* Menghapus margin kiri */
 }
 
 .accordionContent .noBullet::before {
-  content: none;
+  content: none; /* Menghapus konten sebelum */
 }
 
 /* Dark Mode Styles */
 :global(.dark-mode) .section {
-  background-color: #1a1a2e;
-  color: #e6e6e6;
+  background-color: #1a1a2e; /* Background section dalam mode gelap */
+  color: #e6e6e6; /* Warna teks dalam mode gelap */
 }
 
 :global(.dark-mode) .container {
-  background-color: #1a1a2e;
+  background-color: #1a1a2e; /* Background container dalam mode gelap */
 }
 
 :global(.dark-mode) .header {
-  color: #e6e6e6;
+  color: #e6e6e6; /* Warna header dalam mode gelap */
 }
 
 :global(.dark-mode) .title {
-  color: #bb86fc;
+  color: #bb86fc; /* Warna title dalam mode gelap */
 }
 
 :global(.dark-mode) .subtitle {
-  color: #e6e6e6;
+  color: #e6e6e6; /* Warna subtitle dalam mode gelap */
 }
 
 :global(.dark-mode) .accordionItem {
-  background-color: #25253c;
-  border: 1px solid #353554;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  background-color: #25253c; /* Background accordion item dalam mode gelap */
+  border: 1px solid #353554; /* Border accordion item dalam mode gelap */
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Bayangan accordion item dalam mode gelap */
 }
 
 :global(.dark-mode) .accordionButton {
-  color: #e6e6e6;
+  color: #e6e6e6; /* Warna tombol dalam mode gelap */
 }
 
 :global(.dark-mode) .iconContainer {
-  background-color: rgba(187, 134, 252, 0.1);
+  background-color: rgba(187, 134, 252, 0.1); /* Background ikon dalam mode gelap */
 }
 
 :global(.dark-mode) .icon {
-  fill: #bb86fc;
+  fill: #bb86fc; /* Warna ikon dalam mode gelap */
 }
 
 :global(.dark-mode) .accordionHeader {
-  color: #e6e6e6;
+  color: #e6e6e6; /* Warna header accordion dalam mode gelap */
 }
 
 :global(.dark-mode) .accordionContent {
-  color: #b8b8b8;
+  color: #b8b8b8; /* Warna konten accordion dalam mode gelap */
 }

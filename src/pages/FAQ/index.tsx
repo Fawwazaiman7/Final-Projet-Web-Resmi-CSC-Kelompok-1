@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
-import styles from "../../styles/FAQ/Faq.module.css";
-import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react"; // Mengimpor hook useState dan useEffect dari React untuk mengelola state dan efek samping
+import styles from "../../styles/FAQ/Faq.module.css"; // Mengimpor modul CSS untuk styling spesifik halaman FAQ
+import { useTranslation } from "react-i18next"; // Mengimpor hook useTranslation dari react-i18next untuk menangani terjemahan
 
 const Faq = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const { t } = useTranslation('common');
-  const [faqData, setFaqData] = useState<{ header: string | JSX.Element; text: string | JSX.Element; }[]>([]);
-  const [isMounted, setIsMounted] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null); // State untuk melacak indeks accordion yang sedang aktif
+  const { t } = useTranslation('common'); // Mengambil fungsi terjemahan dari i18next untuk namespace 'common'
+  const [faqData, setFaqData] = useState<{ header: string | JSX.Element; text: string | JSX.Element; }[]>([]); // State untuk menyimpan data FAQ
+  const [isMounted, setIsMounted] = useState(false); // State untuk mengecek apakah komponen telah dimuat
 
   useEffect(() => {
-    setIsMounted(true);
-    setFaqData([
+    setIsMounted(true); // Mengubah state isMounted menjadi true saat komponen telah dimount
+    setFaqData([ // Mengisi data FAQ setelah komponen di-mount
       {
         header: t("faq_0_header"),
         text: t("faq_0_text"),
@@ -100,34 +100,34 @@ const Faq = () => {
         ),
       },
     ]);
-  }, [t]);
+  }, [t]); // Efek samping yang dijalankan setelah komponen di-mount dan tergantung pada terjemahan
 
   const handleToggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex(activeIndex === index ? null : index); // Mengubah indeks aktif saat item FAQ diklik
   };
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.header}>
+    <section className={styles.section}> {/* Seksi utama halaman FAQ */}
+      <div className={styles.container}> {/* Kontainer utama untuk FAQ */}
+        <div className={styles.header}> {/* Header FAQ */}
           {isMounted && (
             <>
-              <span className={styles.title}>{t('faq_title')}</span>
-              <h2 className={styles.subtitle}>{t('faq_subtitle')}</h2>
+              <span className={styles.title}>{t('faq_title')}</span> {/* Menampilkan judul FAQ */}
+              <h2 className={styles.subtitle}>{t('faq_subtitle')}</h2> {/* Menampilkan subjudul FAQ */}
             </>
           )}
         </div>
 
-        <div className={styles.accordionGrid}>
+        <div className={styles.accordionGrid}> {/* Grid untuk item-item FAQ */}
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`${styles.accordionItem} ${activeIndex === index ? styles.active : ""}`}
+              className={`${styles.accordionItem} ${activeIndex === index ? styles.active : ""}`} /* Mengatur kelas aktif pada item yang sedang dibuka */
             >
-              <button className={styles.accordionButton} onClick={() => handleToggle(index)}>
-                <div className={styles.iconContainer}>
+              <button className={styles.accordionButton} onClick={() => handleToggle(index)}> {/* Tombol untuk membuka atau menutup FAQ */}
+                <div className={styles.iconContainer}> {/* Kontainer ikon accordion */}
                   <svg
-                    className={`${styles.icon} ${activeIndex === index ? styles.iconActive : ""}`}
+                    className={`${styles.icon} ${activeIndex === index ? styles.iconActive : ""}`} /* Mengatur ikon untuk animasi buka/tutup */
                     width="17"
                     height="10"
                     viewBox="0 0 17 10"
@@ -140,11 +140,11 @@ const Faq = () => {
                     />
                   </svg>
                 </div>
-                <h4 className={styles.accordionHeader}>{faq.header}</h4>
+                <h4 className={styles.accordionHeader}>{faq.header}</h4> {/* Menampilkan header FAQ */}
               </button>
               {activeIndex === index && (
                 <div className={styles.accordionContent}>
-                  <p>{faq.text}</p>
+                  <p>{faq.text}</p> {/* Menampilkan konten FAQ jika item aktif */}
                 </div>
               )}
             </div>
@@ -155,4 +155,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default Faq; // Mengekspor komponen Faq sebagai default

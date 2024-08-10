@@ -1,228 +1,228 @@
 .pageContainer {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
+  font-family: 'Poppins', sans-serif; /* Font utama untuk seluruh halaman */
+  color: #333; /* Warna teks default */
 }
 
 /* Styling General */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: 1200px; /* Lebar maksimum container */
+  margin: 0 auto; /* Memusatkan container secara horizontal */
+  padding: 0 20px; /* Padding kiri dan kanan */
 }
 
 /* Profile Section */
 .profileSection {
-  background-color: #1a2b6f; /* Tambahkan background untuk membedakan dengan container */
-  padding: 50px 0; /* Padding untuk jarak di dalam section */
+  background-color: #1a2b6f; /* Warna latar belakang untuk profil section */
+  padding: 50px 0; /* Padding atas dan bawah */
 }
 
 .header {
-  text-align: justify;
-  margin-bottom: 50px;
+  text-align: justify; /* Teks rata kiri-kanan */
+  margin-bottom: 50px; /* Margin bawah */
 }
 
 .title {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #f0f0f0;
+  font-size: 3rem; /* Ukuran font untuk judul */
+  font-weight: bold; /* Ketebalan font untuk judul */
+  text-align: center; /* Teks rata tengah */
+  margin-bottom: 30px; /* Margin bawah */
+  color: #f0f0f0; /* Warna teks untuk judul */
 }
 
 .description {
-  font-size: 1.5rem;
-  text-align: justify;
-  color: #f0f0f0;
+  font-size: 1.5rem; /* Ukuran font untuk deskripsi */
+  text-align: justify; /* Teks rata kiri-kanan */
+  color: #f0f0f0; /* Warna teks untuk deskripsi */
 }
 
 /* History Section */
 .historySection {
-  background-color: #002855; /* Warna background */
-  color: #ffffff;
-  padding: 50px 0;
+  background-color: #002855; /* Warna latar belakang untuk history section */
+  color: #ffffff; /* Warna teks untuk history section */
+  padding: 50px 0; /* Padding atas dan bawah */
 }
 
 .historyTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-align: center;
+  font-size: 3rem; /* Ukuran font untuk judul history */
+  font-weight: bold; /* Ketebalan font untuk judul history */
+  margin-bottom: 20px; /* Margin bawah */
+  color: #ffffff; /* Warna teks untuk judul history */
+  text-align: center; /* Teks rata tengah */
 }
 
 .historyContent h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #ade8f4; /* Warna judul */
+  font-size: 2rem; /* Ukuran font untuk subjudul history */
+  margin-bottom: 10px; /* Margin bawah */
+  color: #ade8f4; /* Warna teks untuk subjudul history */
 }
 
 .historyContent ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: disc; /* Jenis bullet list */
+  padding-left: 20px; /* Padding kiri untuk daftar */
 }
 
 .historyContent ul li {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  margin-bottom: 10px; /* Margin bawah untuk item daftar */
+  font-size: 1.2rem; /* Ukuran font untuk item daftar */
+  line-height: 1.6; /* Jarak antar baris dalam item daftar */
 }
 
 .historyContent ul li::marker {
-  color: #90e0ef; /* Warna bullet points */
+  color: #90e0ef; /* Warna untuk marker bullet points */
 }
 
 .divisionsSection {
-  background-color: #0a015d;
-  padding: 50px 0;
+  background-color: #0a015d; /* Warna latar belakang untuk divisi section */
+  padding: 50px 0; /* Padding atas dan bawah */
 }
 
 .division {
-  margin-bottom: 30px;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1s ease-in-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px; /* Margin bawah untuk setiap divisi */
+  padding: 30px; /* Padding di dalam divisi */
+  background-color: #ffffff; /* Warna latar belakang untuk setiap divisi */
+  border-radius: 15px; /* Radius border untuk divisi */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan untuk divisi */
+  animation: fadeIn 1s ease-in-out; /* Animasi fade-in */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
 }
 
 .division:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px); /* Efek hover untuk mengangkat divisi */
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3); /* Bayangan tambahan saat hover */
 }
 
 .sectionTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #ffffff;
+  font-size: 3rem; /* Ukuran font untuk judul section */
+  font-weight: bold; /* Ketebalan font untuk judul section */
+  margin-bottom: 40px; /* Margin bawah */
+  text-align: center; /* Teks rata tengah */
+  color: #ffffff; /* Warna teks untuk judul section */
 }
 
 .divisionTitle {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  text-align: center;
-  color: #1a2b6f;
-  border-bottom: 2px solid #1a2b6f;
-  display: inline-block;
-  padding-bottom: 5px;
+  font-size: 2.2rem; /* Ukuran font untuk judul divisi */
+  margin-bottom: 15px; /* Margin bawah untuk judul divisi */
+  text-align: center; /* Teks rata tengah untuk judul divisi */
+  color: #1a2b6f; /* Warna teks untuk judul divisi */
+  border-bottom: 2px solid #1a2b6f; /* Garis bawah untuk judul divisi */
+  display: inline-block; /* Menampilkan judul divisi sebagai elemen inline-block */
+  padding-bottom: 5px; /* Padding bawah untuk judul divisi */
 }
 
 .divisionDescription {
-  font-size: 1.3rem;
-  color: #333333;
-  text-align: justify;
-  line-height: 1.7;
+  font-size: 1.3rem; /* Ukuran font untuk deskripsi divisi */
+  color: #333333; /* Warna teks untuk deskripsi divisi */
+  text-align: justify; /* Teks rata kiri-kanan untuk deskripsi divisi */
+  line-height: 1.7; /* Jarak antar baris dalam deskripsi divisi */
 }
 
 .focusArea {
-  margin-top: 25px;
-  padding-top: 15px;
-  border-top: 1px solid #ccc;
+  margin-top: 25px; /* Margin atas untuk area fokus */
+  padding-top: 15px; /* Padding atas untuk area fokus */
+  border-top: 1px solid #ccc; /* Garis atas untuk memisahkan area fokus */
 }
 
 .focusAreaTitle {
-  font-size: 1.8rem;
-  color: #1a2b6f;
-  margin-bottom: 10px;
-  text-align: justify;
+  font-size: 1.8rem; /* Ukuran font untuk judul area fokus */
+  color: #1a2b6f; /* Warna teks untuk judul area fokus */
+  margin-bottom: 10px; /* Margin bawah untuk judul area fokus */
+  text-align: justify; /* Teks rata kiri-kanan untuk judul area fokus */
 }
 
 .focusArea ul {
-  list-style-type: square;
-  padding-left: 20px;
+  list-style-type: square; /* Jenis bullet list untuk area fokus */
+  padding-left: 20px; /* Padding kiri untuk daftar area fokus */
 }
 
 .focusArea ul li {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #555555;
-  transition: color 0.3s ease;
+  margin-bottom: 10px; /* Margin bawah untuk item daftar area fokus */
+  font-size: 1.2rem; /* Ukuran font untuk item daftar area fokus */
+  line-height: 1.7; /* Jarak antar baris dalam item daftar area fokus */
+  color: #555555; /* Warna teks untuk item daftar area fokus */
+  transition: color 0.3s ease; /* Transisi warna untuk hover */
 }
 
 .focusArea ul li:hover {
-  color: #1a2b6f;
+  color: #1a2b6f; /* Warna teks saat hover */
 }
 
 /* Animations */
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Posisi awal sebelum animasi */
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); /* Posisi akhir setelah animasi */
   }
 }
 
 /* Dark Mode Styles */
 :global(.dark-mode) .profileSection {
-    background-color: #1a1a2e;
+    background-color: #1a1a2e; /* Warna background dalam mode gelap */
 }
 
 :global(.dark-mode) .title, 
 :global(.dark-mode) .description {
-    color: #e0e0e0;
+    color: #e0e0e0; /* Warna teks dalam mode gelap */
 }
 
 :global(.dark-mode) .historySection {
-    background-color: #0b1b3a; /* Warna background yang lebih gelap */
-    color: #c7c7c7;
+    background-color: #0b1b3a; /* Warna background yang lebih gelap untuk history section */
+    color: #c7c7c7; /* Warna teks dalam mode gelap untuk history section */
 }
 
 :global(.dark-mode) .historyTitle {
-    color: #9bbdf1;
+    color: #9bbdf1; /* Warna teks untuk judul history dalam mode gelap */
 }
 
 :global(.dark-mode) .historyContent h3 {
-    color: #b3d8f4;
+    color: #b3d8f4; /* Warna teks untuk subjudul history dalam mode gelap */
 }
 
 :global(.dark-mode) .historyContent ul li {
-    color: #c7c7c7;
+    color: #c7c7c7; /* Warna teks untuk item daftar history dalam mode gelap */
 }
 
 :global(.dark-mode) .historyContent ul li::marker {
-    color: #8ab5df;
+    color: #8ab5df; /* Warna marker bullet points dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionsSection {
-    background-color: #12123a; /* Background yang lebih gelap untuk divisi */
+    background-color: #12123a; /* Background yang lebih gelap untuk divisi section */
 }
 
 :global(.dark-mode) .division {
-    background-color: #232340;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    background-color: #232340; /* Background yang lebih gelap untuk setiap divisi */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Bayangan lebih gelap untuk divisi */
 }
 
 :global(.dark-mode) .division:hover {
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6); /* Bayangan tambahan saat hover dalam mode gelap */
 }
 
 :global(.dark-mode) .sectionTitle {
-    color: #9bbdf1;
+    color: #9bbdf1; /* Warna teks untuk judul section dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionTitle {
-    color: #c7c7c7;
-    border-bottom: 2px solid #6c63ff;
+    color: #c7c7c7; /* Warna teks untuk judul divisi dalam mode gelap */
+    border-bottom: 2px solid #6c63ff; /* Garis bawah untuk judul divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .divisionDescription {
-    color: #e0e0e0;
+    color: #e0e0e0; /* Warna teks untuk deskripsi divisi dalam mode gelap */
 }
 
 :global(.dark-mode) .focusAreaTitle {
-    color: #9bbdf1;
+    color: #9bbdf1; /* Warna teks untuk judul area fokus dalam mode gelap */
 }
 
 :global(.dark-mode) .focusArea ul li {
-    color: #c7c7c7;
+    color: #c7c7c7; /* Warna teks untuk item daftar area fokus dalam mode gelap */
 }
 
 :global(.dark-mode) .focusArea ul li:hover {
-    color: #9bbdf1;
+    color: #9bbdf1; /* Warna teks saat hover dalam mode gelap */
 }
