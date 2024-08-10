@@ -61,7 +61,7 @@ const AboutUs = () => {
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>{t('csc_divisions')}</h2>
 
-          <div className={styles.division}>
+          <div className={styles.division} id="software-development">
             <h3 className={styles.divisionTitle}>{t('software_development')}</h3>
             <p className={styles.divisionDescription}>
               {t('software_development_description')}
@@ -78,7 +78,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className={styles.division}>
+          <div className={styles.division} id="cyber-security">
             <h3 className={styles.divisionTitle}>{t('cyber_security')}</h3>
             <p className={styles.divisionDescription}>
               {t('cyber_security_description')}
@@ -95,7 +95,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className={styles.division}>
+          <div className={styles.division} id="explore">
             <h3 className={styles.divisionTitle}>{t('explore')}</h3>
             <p className={styles.divisionDescription}>
               {t('explore_description')}

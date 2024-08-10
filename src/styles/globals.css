@@ -18,6 +18,10 @@ html, body {
   margin: 0;
 }
 
+html{
+  scroll-behavior: smooth;
+
+}
 
 /* Dark Mode */
 body.dark-mode {
@@ -35,5 +39,4 @@ body.dark-mode {
   flex: 1;
 }
 
-/* Tambahkan styling global lainnya jika diperlukan */
 

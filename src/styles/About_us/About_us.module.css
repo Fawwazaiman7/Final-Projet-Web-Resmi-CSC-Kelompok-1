@@ -126,7 +126,7 @@
   font-size: 1.8rem;
   color: #1a2b6f;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: justify;
 }
 
 .focusArea ul {
@@ -160,69 +160,69 @@
 
 /* Dark Mode Styles */
 :global(.dark-mode) .profileSection {
-  background-color: #1a1a2e;
+    background-color: #1a1a2e;
 }
 
 :global(.dark-mode) .title, 
 :global(.dark-mode) .description {
-  color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 :global(.dark-mode) .historySection {
-  background-color: #0b1b3a; /* Warna background yang lebih gelap */
-  color: #c7c7c7;
+    background-color: #0b1b3a; /* Warna background yang lebih gelap */
+    color: #c7c7c7;
 }
 
 :global(.dark-mode) .historyTitle {
-  color: #9bbdf1;
+    color: #9bbdf1;
 }
 
 :global(.dark-mode) .historyContent h3 {
-  color: #b3d8f4;
+    color: #b3d8f4;
 }
 
 :global(.dark-mode) .historyContent ul li {
-  color: #c7c7c7;
+    color: #c7c7c7;
 }
 
 :global(.dark-mode) .historyContent ul li::marker {
-  color: #8ab5df;
+    color: #8ab5df;
 }
 
 :global(.dark-mode) .divisionsSection {
-  background-color: #12123a; /* Background yang lebih gelap untuk divisi */
+    background-color: #12123a; /* Background yang lebih gelap untuk divisi */
 }
 
 :global(.dark-mode) .division {
-  background-color: #232340;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    background-color: #232340;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 :global(.dark-mode) .division:hover {
-  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 :global(.dark-mode) .sectionTitle {
-  color: #9bbdf1;
+    color: #9bbdf1;
 }
 
 :global(.dark-mode) .divisionTitle {
-  color: #c7c7c7;
-  border-bottom: 2px solid #6c63ff;
+    color: #c7c7c7;
+    border-bottom: 2px solid #6c63ff;
 }
 
 :global(.dark-mode) .divisionDescription {
-  color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 :global(.dark-mode) .focusAreaTitle {
-  color: #9bbdf1;
+    color: #9bbdf1;
 }
 
 :global(.dark-mode) .focusArea ul li {
-  color: #c7c7c7;
+    color: #c7c7c7;
 }
 
 :global(.dark-mode) .focusArea ul li:hover {
-  color: #9bbdf1;
+    color: #9bbdf1;
 }

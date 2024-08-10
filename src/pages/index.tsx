@@ -60,7 +60,7 @@ const Home = () => {
               {t("what_we_do_description")}
             </p>
             <div className={styles.buttonContainer}>
-              <Link href="/faq" className={styles.button}>
+              <Link href="/FAQ" className={styles.button}>
                 {t("faq_page")}
               </Link>
             </div>
@@ -104,7 +104,7 @@ const Home = () => {
               {t("cyber_security_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
-              <Link href="/CyberSec" className={styles.button}>
+              <Link href="/about#cyber-security" className={styles.button}>
                 {t("learn_more")}
               </Link>
             </div>
@@ -121,7 +121,7 @@ const Home = () => {
               {t("software_development_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
-              <Link href="/Softdev" className={styles.button}>
+              <Link href="/about#software" className={styles.button}>
                 {t("learn_more")}
               </Link>
             </div>
@@ -138,7 +138,7 @@ const Home = () => {
               {t("explore_description")}
             </p>
             <div className={styles.divisionButtonContainer}>
-              <Link href="/Explore" className={styles.button}>
+              <Link href="/about#explore" className={styles.button}>
                 {t("learn_more")}
               </Link>
             </div>
