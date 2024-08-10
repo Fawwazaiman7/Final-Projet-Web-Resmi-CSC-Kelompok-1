@@ -297,13 +297,6 @@
     }
   }
 
-  @media (max-width: 480px) {
-    .divisionTextContainer h2,
-    .divisionTextContainer p {
-      font-size: smaller; /* Adjust text size for smaller screens */
-    }
-  }
-
   .textContainer {
     margin-left: 0;
     margin-top: 20px;
